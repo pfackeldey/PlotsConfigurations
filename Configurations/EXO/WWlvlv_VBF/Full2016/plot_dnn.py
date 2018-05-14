@@ -7,7 +7,7 @@
 
 
 groupPlot['top']  = {
-                  'nameHR' : 'tt and tW',
+                  'nameHR' : 'tW and t#bart',
                   'isSignal' : 0,
                   'color': 400,   # kYellow
                   'samples'  : ['top']
@@ -35,8 +35,9 @@ groupPlot['WW']  = {
                   'nameHR' : 'WW',
                   'isSignal' : 0,
                   'color': 851, # kAzure -9
-                  'samples'  : ['WW', 'ggWW']
+                  'samples'  : ['WW', 'ggWW', 'qqWWqq','WW2J']
               }
+
 
 groupPlot['VVV']  = {
                   'nameHR' : 'VVV',
@@ -65,14 +66,14 @@ groupPlot['Higgs']  = {
                   'nameHR' : 'Higgs 125 GeV',
                   'isSignal' : 0,
                   'color': 632, # kRed
-                  'samples'  : ['H_htt', 'H_hww', 'ZH_hww', 'ggZH_hww', 'WH_hww', 'ggH_hww']
+                  'samples'  : ['H_htt', 'H_hww', 'ZH_hww', 'ggZH_hww', 'WH_hww', 'qqH_hww', 'ggH_hww']
               }
 
 
 
 
 groupPlot['400']  = {
-                  'nameHR' : 'mH = 400 GeV',
+                  'nameHR' : 'mH = 400 GeV X10',
                   'isSignal' : 2,
                   'color': 633, # kRed
                   'samples'  : ['ggH_hww_400_c10brn00','ggH_hww_SBI400_c10brn00','qqH_hww_400_c10brn00']
@@ -81,16 +82,15 @@ groupPlot['400']  = {
 
 
 groupPlot['800']  = {
-                  'nameHR' : 'mH = 800 GeV',
+                  'nameHR' : 'mH = 800 GeV X10',
                   'isSignal' : 2,
                   'color': 603, # kRed
-                  'samples'  : ['ggH_hww_800_c10brn00','ggH_hww_SBI800_c10brn00','qqH_hww_800_c10brn00']
+                  'samples'  : ['ggH_hww_800_c10brn00','ggH_hwwSBI_800_c10brn00','qqH_hww_800_c10brn00']
                }
 
 
-
+'''
 #Separated ggH, SBI, VBF
-"""
 groupPlot['400']  = {
                   'nameHR' : 'mH = 400 GeV',
                   'isSignal' : 2,
@@ -111,7 +111,7 @@ groupPlot['400_VBF']  = {
                   'color': 6, # kRed
                   'samples'  : ['qqH_hww_400_c10brn00']
                }
-"""
+'''
 
 
 
@@ -133,7 +133,7 @@ plot['singletop'] = {
                   }
 
 plot['top'] = {
-                  'nameHR' : 'tt and tW',
+                  'nameHR' : 'tW and t#bart',
                   'color': 400,   # kYellow
                   'isSignal' : 0,
                   'isData'   : 0,
@@ -214,12 +214,30 @@ plot['WW']  = {
                   'scale'    : 1.0   # ele/mu trigger efficiency   datadriven
                   }
 
+plot['qqWWqq']  = {
+                  'color': 851, # kAzure -9
+                  'isSignal' : 0,
+                  'isData'   : 0,
+                  'scale'    : 1.0   # ele/mu trigger efficiency   datadriven
+                  }
+
+
+
+plot['WW2J']  = {
+                  'color': 851, # kAzure -9
+                  'isSignal' : 0,
+                  'isData'   : 0,
+                  'scale'    : 1.0   # ele/mu trigger efficiency   datadriven
+                  }
+
+
 plot['ggWW']  = {
                   'color': 850, # kAzure -10
                   'isSignal' : 0,
                   'isData'   : 0,
                   'scale'    : 1.0
                   }
+
 
 plot['ggWW_Int']  = {
                   'color': 616, # kMagenta
@@ -354,6 +372,7 @@ plot['ggH_hww'] = {
 
 #Signal
 
+
 plot['ggH_hww_400_c10brn00'] = {
                'nameHR' : 'ggH 400',
                'color': 600, # kRed
@@ -438,140 +457,7 @@ plot['qqH_hww_800_c10brn00'] = {
                         'hwwhm_13TeV_of_VBF' : 100,
                 }
               }
-"""
-# dennis:
 
-plot['ggH_hww_400_c10brn00'] = {
-               'nameHR' : 'ggH 400',
-               'color': 600, # kRed
-               #'color':   col,
-               'isSignal' : 2,
-               'isData'   : 0,
-               'scale'    : 1,    #
-               'cuts'     : {
-                        'hwwhm_13TeV_of_0j'  : 1,
-                        'hwwhm_13TeV_of_1j'  : 1,
-                        'hwwhm_13TeV_of2j'   : 1,
-                }
-               }
-plot['ggH_hww_SBI400_c10brn00'] = {
-              'nameHR' : 'ggH 400',
-              'color': 600, # kRed
-              #'color':   col,
-              'isSignal' : 2,
-              'isData'   : 0,
-              'scale'    : 1,    #
-               'cuts'     : {
-                        'hwwhm_13TeV_of_0j'  : 1,
-                        'hwwhm_13TeV_of_1j'  : 1,
-                        'hwwhm_13TeV_of2j'   : 1,
-                }
-              }
-
-# peter:
-plot['ggH_hww_400_c10brn00'] = {
-               'nameHR' : 'ggH 400',
-               'color': 600, # kRed
-               #'color':   col,
-               'isSignal' : 2,
-               'isData'   : 0,
-               'scale'    : 1.511,    #
-               'cuts'     : {
-                        'hwwhm_low_13TeV_of_0j'  : 1,
-                        'hwwhm_medium_13TeV_of_0j'  : 1,
-                        'hwwhm_high_13TeV_of_0j'  : 1,
-                        'hwwhm_low_13TeV_of_1j'  : 1,
-                        'hwwhm_medium_13TeV_of_1j'  : 1,
-                        'hwwhm_high_13TeV_of_1j'  : 1,
-                        'hwwhm_low_13TeV_of2j'   : 1,
-                        'hwwhm_medium_13TeV_of2j'   : 1,
-                        'hwwhm_high_13TeV_of2j'   : 1,
-                }
-               }
-
-plot['ggH_hww_SBI400_c10brn00'] = {
-              'nameHR' : 'ggH 400',
-              'color': 600, # kRed
-              #'color':   col,
-              'isSignal' : 2,
-              'isData'   : 0,
-              'scale'    : 1,    #
-               'cuts'     : {
-                        'hwwhm_low_13TeV_of_0j'  : 1,
-                        'hwwhm_medium_13TeV_of_0j'  : 1,
-                        'hwwhm_high_13TeV_of_0j'  : 1,
-                        'hwwhm_low_13TeV_of_1j'  : 1,
-                        'hwwhm_medium_13TeV_of_1j'  : 1,
-                        'hwwhm_high_13TeV_of_1j'  : 1,
-                        'hwwhm_low_13TeV_of2j'   : 1,
-                        'hwwhm_medium_13TeV_of2j'   : 1,
-                        'hwwhm_high_13TeV_of2j'   : 1,
-                }
-              }
-
-plot['qqH_hww_400_c10brn00'] = {
-              'nameHR' : 'qqH 400',
-              'color': 600, # kRed
-              'isSignal' : 2,
-              'isData'   : 0,
-              'scale'    : 1,    #
-               'cuts'     : {
-                        'hwwhm_13TeV_of_0j'  : 1,
-                        'hwwhm_13TeV_of_1j'  : 1,
-                        'hwwhm_13TeV_of2j'   : 1,
-                        'hwwhm_13TeV_of_VBF' : 1,
-                }
-              }
-
-
-plot['ggH_hww_800_c10brn00'] = {
-               'nameHR' : 'ggH 800',
-               'color': 600, # kRed
-               #'color':   col,
-               'isSignal' : 2,
-               'isData'   : 0,
-               'scale'    : 0.049,    #
-               'cuts'     : {
-                        'hwwhm_low_13TeV_of_0j'  : 100,
-                        'hwwhm_medium_13TeV_of_0j'  : 100,
-                        'hwwhm_high_13TeV_of_0j'  : 100,
-                        'hwwhm_low_13TeV_of_1j'  : 100,
-                        'hwwhm_medium_13TeV_of_1j'  : 100,
-                        'hwwhm_high_13TeV_of_1j'  : 100,
-                        'hwwhm_low_13TeV_of2j'   : 100,
-                        'hwwhm_medium_13TeV_of2j'   : 100,
-                        'hwwhm_high_13TeV_of2j'   : 100,
-                }
-               }
-
-plot['ggH_hww_SBI800_c10brn00'] = {
-              'nameHR' : 'ggH 800',
-              'color': 600, # kRed
-              #'color':   col,
-              'isSignal' : 2,
-              'isData'   : 0,
-              'scale'    : 1,    #
-               'cuts'     : {
-                        'hwwhm_13TeV_of_0j'  : 100,
-                        'hwwhm_13TeV_of_1j'  : 100,
-                        'hwwhm_13TeV_of2j'   : 100,
-                        'hwwhm_13TeV_of_VBF' : 100,
-                }
-              }
-plot['qqH_hww_800_c10brn00'] = {
-              'nameHR' : 'qqH 800',
-              'color': 600, # kRed
-              'isSignal' : 2,
-              'isData'   : 0,
-              'scale'    : 1,    #
-               'cuts'     : {
-                        'hwwhm_13TeV_of_0j'  : 100,
-                        'hwwhm_13TeV_of_1j'  : 100,
-                        'hwwhm_13TeV_of2j'   : 100,
-                        'hwwhm_13TeV_of_VBF' : 100,
-                }
-              }
-"""
 import os.path
 
 massesAndModelsFile = "massesAndModels.py"
@@ -596,7 +482,6 @@ for m in masses:
                   'isData'   : 0,
                   'scale'    : 1    #
                   }
-
     plot['ggH_hww_SBI'+m+'_'+model_name] = {
                   'nameHR' : 'ggH '+m+' '+model,
                   'color': 600+int(int(m)/100+0.5), # kRed
@@ -605,7 +490,6 @@ for m in masses:
                   'isData'   : 0,
                   'scale'    : 1    #
                   }
-
     plot['qqH_hww_'+m+'_'+model_name] = {
                   'nameHR' : 'qqH '+m+' '+model,
                   'color': 600+20+int(int(m)/100+0.5), # kRed
@@ -614,6 +498,14 @@ for m in masses:
                   'scale'    : 1    #
                   }
 
+    plot['qqH_hww_SBI'+m+'_'+model_name] = {
+                  'nameHR' : 'qqH '+m+' '+model,
+                  'color': 600+int(int(m)/100+0.5), # kRed
+                  #'color':   col,
+                  'isSignal' : 2,
+                  'isData'   : 0,
+                  'scale'    : 1    #
+                  }
 
 
 # data
@@ -624,7 +516,7 @@ plot['DATA']  = {
                   'color': 1 ,
                   'isSignal' : 0,
                   'isData'   : 1 ,
-                  'isBlind'  : 0
+                  'isBlind'  : 1
               }
 
 

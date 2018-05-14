@@ -16,22 +16,30 @@ massesAndModelsFile = "massesAndModels.py"
 
 regions0j = ['hww2l2v_13TeV_top_of0j',
              'hww2l2v_13TeV_dytt_of0j',
-             'hwwhm_13TeV_of_0j',
+             'hwwhm_low_13TeV_of_0j',
+             'hwwhm_medium_13TeV_of_0j',
+             'hwwhm_high_13TeV_of_0j',
              ]
 
 regions1j = ['hww2l2v_13TeV_top_of1j',
              'hww2l2v_13TeV_dytt_of1j',
-             'hwwhm_13TeV_of_1j',
+             'hwwhm_low_13TeV_of_1j',
+             'hwwhm_medium_13TeV_of_1j',
+             'hwwhm_high_13TeV_of_1j',
              ]
 
 regions2j = ['hww2l2v_13TeV_top_of2j',
              'hww2l2v_13TeV_dytt_of2j',
-             'hwwhm_13TeV_of_2j',
+             'hwwhm_low_13TeV_of_2j',
+             'hwwhm_medium_13TeV_of_2j',
+             'hwwhm_high_13TeV_of_2j',
              ]
 
 regions2j_VBF = ['hww2l2v_13TeV_top_of2j_VBF',
                  'hww2l2v_13TeV_dytt_of2j_VBF',
-                 'hwwhm_13TeV_of_2j_VBF',
+                 'hwwhm_low_13TeV_of_2j_VBF',
+                 'hwwhm_medium_13TeV_of_2j_VBF',
+                 'hwwhm_high_13TeV_of_2j_VBF',
                  ]
 
 regions0j_of = [ item for item in regions0j if "of" in item]
@@ -531,7 +539,7 @@ nuisances['pdf_qqbar_accept']  = {
 #    model_name = model.replace("cprime","c").replace(".","").replace("BRnew","brn")
 #    nuisances['pdf_qqbar_accept']['samples'].update({'qqH_hww_'+m+'_'+model_name:'1.011'})
 #Controllare il 1.1%
-"""
+
 
 
 #######################################
@@ -546,7 +554,7 @@ nuisances['QCDscale_ggWW']  = {
                    },
               }
 
-"""
+
 #  - WW shaping
 nuisances['WWresum0j']  = {
                 'name'  : 'WWresum0j',
@@ -650,7 +658,7 @@ nuisances['UE']  = {
 
 
 ####################################
-"""
+
 
 nuisances['WgStarScale']  = {
                'name'  : 'WgStarScale',
@@ -688,7 +696,7 @@ nuisances['DYttnorm2j']  = {
                'type'  : 'rateParam',
                'cuts'  : regions2j_of
               }
-"""
+
 nuisances['DYttnorm2jVBF']  = {
                'name'  : 'CMS_hwwhmof_DYttnorm2jVBF',
                'samples'  : {
@@ -697,7 +705,7 @@ nuisances['DYttnorm2jVBF']  = {
                'type'  : 'rateParam',
                'cuts'  : regions2j_VBF_of
               }
-"""
+
 
 nuisances['WWofnorm0j']  = {
                'name'  : 'CMS_hwwhmof_WWofnorm0j',
@@ -725,7 +733,7 @@ nuisances['WWofnorm2j']  = {
                'type'  : 'rateParam',
                'cuts'  : regions2j
               }
-"""
+
 nuisances['WWofnorm2jVBF']  = {
                'name'  : 'CMS_hwwhmof_WWnorm2jVBF',
                'samples'  : {
@@ -734,7 +742,7 @@ nuisances['WWofnorm2jVBF']  = {
                'type'  : 'rateParam',
                'cuts'  : regions2j_VBF
               }
-"""
+
 
 nuisances['Topofnorm0j']  = {
                'name'  : 'CMS_hwwhmof_Topnorm0j',
@@ -762,7 +770,7 @@ nuisances['Topofnorm2j']  = {
                'type'  : 'rateParam',
                'cuts'  : regions2j
               }
-"""
+
 nuisances['Topofnorm2jVBF']  = {
                'name'  : 'CMS_hwwhmof_Topnorm2jVBF',
                'samples'  : {
@@ -772,8 +780,8 @@ nuisances['Topofnorm2jVBF']  = {
                'cuts'  : regions2j_VBF
               }
 
-"""
-"""
+
+
 
 
 
@@ -801,7 +809,7 @@ nuisances['TopPS']  = {
 }
 
 
-"""
+
 ###############################################################################
 #### Luminosity
 nuisances['lumi']  = {
@@ -832,7 +840,7 @@ for m in masses:
     nuisances['lumi']['samples'].update({'ggH_hww_'+m+'_'+model_name:'1.025'})
     nuisances['lumi']['samples'].update({'qqH_hww_'+m+'_'+model_name:'1.025'})
     nuisances['lumi']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name:'1.025'})
-"""
+
 
 
 ############################ FAKES ###################################################################################### ok!
@@ -857,7 +865,7 @@ else:
   fakeW_statEleDown = '( fakeW_ele_'+eleWP+'_mu_'+muWP+'_'+Nlep+'lstatElDown / fakeW_ele_'+eleWP+'_mu_'+muWP+'_'+Nlep+'l )'
   fakeW_statMuUp    = '( fakeW_ele_'+eleWP+'_mu_'+muWP+'_'+Nlep+'lstatMuUp   / fakeW_ele_'+eleWP+'_mu_'+muWP+'_'+Nlep+'l )'
   fakeW_statMuDown  = '( fakeW_ele_'+eleWP+'_mu_'+muWP+'_'+Nlep+'lstatMuDown / fakeW_ele_'+eleWP+'_mu_'+muWP+'_'+Nlep+'l )'
-"""
+
 nuisances['fake_syst']  = {
                'name'  : 'CMS_hwwof_fake_syst',
                'type'  : 'lnN',
@@ -865,7 +873,7 @@ nuisances['fake_syst']  = {
                              'Fake' : '1.30',
                              },
 }
-"""
+
 nuisances['fake_ele']  = {
                 'name'  : 'fake_ele_hww',
                 'kind'  : 'weight',
@@ -966,7 +974,7 @@ for m in masses:
     nuisances['btagudsg']['samples'].update({'ggH_hww_'+m+'_'+model_name:['('+bSF+'_udsg_up)/('+bSF+')', '('+bSF+'_udsg_down)/('+bSF+')']})
     nuisances['btagudsg']['samples'].update({'qqH_hww_'+m+'_'+model_name:['('+bSF+'_udsg_up)/('+bSF+')', '('+bSF+'_udsg_down)/('+bSF+')']})
     nuisances['btagudsg']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name:['('+bSF+'_udsg_up)/('+bSF+')', '('+bSF+'_udsg_down)/('+bSF+')']})
-"""
+
 
 
 ############################ Trigger Efficiency ###########
@@ -975,7 +983,7 @@ if   Nlep == '2' : trig_syst = ['(effTrigW_Up)/(effTrigW)', '(effTrigW_Down)/(ef
 elif Nlep == '3' : trig_syst = ['(effTrigW3l_Up)/(effTrigW3l)', '(effTrigW3l_Down)/(effTrigW3l)']
 # !!!!! We don't have the trigger formula implemented for 4l !!!! -> Use 3l but not correct
 elif Nlep == '4' : trig_syst = ['(effTrigW3l_Up)/(effTrigW3l)', '(effTrigW3l_Down)/(effTrigW3l)']
-"""
+
 nuisances['trigg']  = {
                 'name'  : 'trigger',
                 'kind'  : 'weight',
@@ -1008,13 +1016,13 @@ for m in masses:
     nuisances['trigg']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name: trig_syst})
 
 
-"""
+
 ################### Electron Efficiency and energy scale ##########ok!
 
 id_syst_ele = [ 'LepSF'+Nlep+'l__ele_'+eleWP+'__Up' , 'LepSF'+Nlep+'l__ele_'+eleWP+'__Do' ]
 
 
-"""
+
 nuisances['eff_e']  = {
                 'name'  : 'eff_e',
                 'kind'  : 'weight',
@@ -1045,8 +1053,8 @@ for m in masses:
     nuisances['eff_e']['samples'].update({'qqH_hww_'+m+'_'+model_name: id_syst_ele })
     nuisances['eff_e']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name: id_syst_ele })
 
-"""
-"""
+
+
 nuisances['electronpt']  = {
                 'name'  : 'scale_e',
                 'kind'  : 'tree',
@@ -1155,13 +1163,13 @@ for m in masses:
     nuisances['eleEtaCor']['samples'].update({'qqH_hww_'+m+'_'+model_name:  eleEtaCor_Syst})
     nuisances['eleEtaCor']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name:  eleEtaCor_Syst})
 
-"""
+
 ############# Muon Efficiency and energy scale  #######
 
 id_syst_mu = [ 'LepSF'+Nlep+'l__mu_'+muWP+'__Up' , 'LepSF'+Nlep+'l__mu_'+muWP+'__Do' ]
 
 
-"""
+
 nuisances['eff_m']  = {
                 'name'  : 'eff_m',
                 'kind'  : 'weight',
@@ -1192,8 +1200,8 @@ for m in masses:
     nuisances['eff_m']['samples'].update({'qqH_hww_'+m+'_'+model_name: id_syst_mu })
     nuisances['eff_m']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name: id_syst_mu })
 
-"""
-"""
+
+
 nuisances['muonpt']  = {
                 'name'  : 'scale_m',
                 'kind'  : 'tree',
@@ -1322,7 +1330,7 @@ nuisances['DYQCDscale']  = {
                 }
 }
 
-"""
+
 ## Use the following if you want to apply the automatic combine MC stat nuisances.
 nuisances['stat']  = {
               'type'  : 'auto',

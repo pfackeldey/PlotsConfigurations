@@ -143,7 +143,6 @@ nuisances['QCDscale_ggZH']  = {
 ########################################################
 #NEW!
 #For the HM singals, the un. are taken from in VBF categories
-
 nuisances['QCDscale_qqbar_accept']  = {
                'name'  : 'QCDscale_qqbar_accept',
                'type'  : 'lnN',
@@ -153,36 +152,41 @@ nuisances['QCDscale_qqbar_accept']  = {
                    'WH_hww'  : '1.05',
                    'ZH_hww'  : '1.04',
                    'VZ'      : '1.029',
-                   'qqH_hww_200_c10brn00': '0.991/1.003' ,
-                   'qqH_hww_210_c10brn00': '0.990/1.005' ,
-                   'qqH_hww_230_c10brn00': '0.994/1.001' ,
-                   'qqH_hww_250_c10brn00': '0.994/1.002' ,
-                   'qqH_hww_270_c10brn00': '0.993/1.003' ,
-                   'qqH_hww_300_c10brn00': '0.996/0.999' ,
-                   'qqH_hww_350_c10brn00': '0.996/0.999' ,
-                   'qqH_hww_400_c10brn00': '0.998/0.997' ,
-                   'qqH_hww_450_c10brn00': '1.000/0.995' ,
-                   'qqH_hww_500_c10brn00': '1.001/0.994' ,
-                   'qqH_hww_550_c10brn00': '1.004/0.990' ,
-                   'qqH_hww_650_c10brn00': '1.003/0.992' ,
-                   'qqH_hww_700_c10brn00': '1.004/0.990' ,
-                   'qqH_hww_750_c10brn00': '1.006/0.989' ,
-                   'qqH_hww_800_c10brn00': '1.009/0.984' ,
-                   'qqH_hww_900_c10brn00': '1.007/0.988' ,
-                   'qqH_hww_1000_c10brn00': '1.008/0.986' ,
-                   'qqH_hww_1500_c10brn00': '1.015/0.976' ,
-                   'qqH_hww_2000_c10brn00': '1.017/0.973' ,
-                   'qqH_hww_2500_c10brn00': '1.016/0.973' ,
-                   'qqH_hww_3000_c10brn00': '1.022/0.963' ,
+                   #'qqH_hww_200_c10brn00': '0.991/1.003' ,
+                   #'qqH_hww_210_c10brn00': '0.990/1.005' ,
+                   #'qqH_hww_230_c10brn00': '0.994/1.001' ,
+                   #'qqH_hww_250_c10brn00': '0.994/1.002' ,
+                   #'qqH_hww_270_c10brn00': '0.993/1.003' ,
+                   #'qqH_hww_300_c10brn00': '0.996/0.999' ,
+                   #'qqH_hww_350_c10brn00': '0.996/0.999' ,
+                   #'qqH_hww_400_c10brn00': '0.998/0.997' ,
+                   #'qqH_hww_450_c10brn00': '1.000/0.995' ,
+                   #'qqH_hww_500_c10brn00': '1.001/0.994' ,
+                   #'qqH_hww_550_c10brn00': '1.004/0.990' ,
+                   #'qqH_hww_650_c10brn00': '1.003/0.992' ,
+                   #'qqH_hww_700_c10brn00': '1.004/0.990' ,
+                   #'qqH_hww_750_c10brn00': '1.006/0.989' ,
+                   #'qqH_hww_800_c10brn00': '1.009/0.984' ,
+                   #'qqH_hww_900_c10brn00': '1.007/0.988' ,
+                   #'qqH_hww_1000_c10brn00': '1.008/0.986' ,
+                   #'qqH_hww_1500_c10brn00': '1.015/0.976' ,
+                   #'qqH_hww_2000_c10brn00': '1.017/0.973' ,
+                   #'qqH_hww_2500_c10brn00': '1.016/0.973' ,
+                   #'qqH_hww_3000_c10brn00': '1.022/0.963' ,
 
 
                    },
               }
-#for m in masses:
-#  for model in models:
-#    model_name = model.replace("cprime","c").replace(".","").replace("BRnew","brn")
-#    nuisances['QCDscale_qqbar_accept']['samples'].update({'qqH_hww_'+m+'_'+model_name:'1.02'})
-#Controllare il 2%
+for m in masses:
+
+  mass=int(m)
+  weight1= ((0.971893 + (mass*8.75961e-05 )+(mass*mass*-3.9762e-08)+(mass*mass*mass*6.78212e-12 ))*(mass>449) + 1.003*(mass<449))
+  weight=str(weight1)
+  #print  weight
+  for model in models:
+    model_name = model.replace("cprime","c").replace(".","").replace("BRnew","brn")
+    nuisances['QCDscale_qqbar_accept']['samples'].update({'qqH_hww_'+m+'_'+model_name: weight})
+    nuisances['QCDscale_qqbar_accept']['samples'].update({'qqH_hww_SBI'+m+'_'+model_name: weight})
 
 
 #For the HM singals, the un. are taken from in 0 jet
@@ -194,59 +198,64 @@ nuisances['QCDscale_gg_accept']  = {
                    'ggH_hww' : '1.027',
                    'H_htt'   : '1.027',
                    'ggZH_hww': '1.027',
-                   'ggH_hww_200_c10brn00': '1.024/0.969' ,
-                   'ggH_hww_SBI200_c10brn00': '1.058/0.937' ,
-                   'ggH_hww_210_c10brn00': '1.023/0.971' ,
-                   'ggH_hww_SBI210_c10brn00': '1.057/0.938' ,
-                   'ggH_hww_230_c10brn00': '1.023/0.971' ,
-                   'ggH_hww_SBI230_c10brn00': '1.056/0.941' ,
-                   'ggH_hww_250_c10brn00': '1.024/0.969' ,
-                   'ggH_hww_SBI250_c10brn00': '1.059/0.937' ,
-                   'ggH_hww_270_c10brn00': '1.026/0.966' ,
-                   'ggH_hww_SBI270_c10brn00': '1.063/0.932' ,
-                   'ggH_hww_300_c10brn00': '1.024/0.969' ,
-                   'ggH_hww_SBI300_c10brn00': '1.066/0.932' ,
-                   'ggH_hww_350_c10brn00': '1.022/0.971' ,
-                   'ggH_hww_SBI350_c10brn00': '1.062/0.936' ,
-                   'ggH_hww_400_c10brn00': '1.022/0.971' ,
-                   'ggH_hww_SBI400_c10brn00': '1.067/0.932' ,
-                   'ggH_hww_450_c10brn00': '1.023/0.969' ,
-                   'ggH_hww_SBI450_c10brn00': '1.078/0.922' ,
-                   'ggH_hww_500_c10brn00': '1.025/0.966' ,
-                   'ggH_hww_SBI500_c10brn00': '1.090/0.912' ,
-                   'ggH_hww_550_c10brn00': '1.025/0.966' ,
-                   'ggH_hww_SBI550_c10brn00': '1.102/0.904' ,
-                   'ggH_hww_650_c10brn00': '1.026/0.964' ,
-                   'ggH_hww_SBI650_c10brn00': '1.120/0.891' ,
-                   'ggH_hww_700_c10brn00': '1.026/0.963' ,
-                   'ggH_hww_SBI700_c10brn00': '1.127/0.886' ,
-                   'ggH_hww_750_c10brn00': '1.025/0.964' ,
-                   'ggH_hww_SBI750_c10brn00': '1.133/0.883' ,
-                   'ggH_hww_800_c10brn00': '1.026/0.964' ,
-                   'ggH_hww_SBI800_c10brn00': '1.137/0.880' ,
-                   'ggH_hww_900_c10brn00': '1.026/0.964' ,
-                   'ggH_hww_SBI900_c10brn00': '1.142/0.877' ,
-                   'ggH_hww_1000_c10brn00': '1.024/0.966' ,
-                   'ggH_hww_SBI1000_c10brn00': '1.146/0.875' ,
-                   'ggH_hww_1500_c10brn00': '1.022/0.969' ,
-                   'ggH_hww_SBI1500_c10brn00': '1.152/0.870' ,
-                   'ggH_hww_2000_c10brn00': '1.021/0.972' ,
-                   'ggH_hww_SBI2000_c10brn00': '1.155/0.869' ,
-                   'ggH_hww_2500_c10brn00': '1.018/0.977' ,
-                   'ggH_hww_SBI2500_c10brn00': '1.143/0.865' ,
-                   'ggH_hww_3000_c10brn00': '1.015/0.981' ,
-                   'ggH_hww_SBI3000_c10brn00': '1.157/0.868' ,
+                   #'ggH_hww_200_c10brn00': '1.024/0.969' ,
+                   #'ggH_hww_SBI200_c10brn00': '1.058/0.937' ,
+                   #'ggH_hww_210_c10brn00': '1.023/0.971' ,
+                   #'ggH_hww_SBI210_c10brn00': '1.057/0.938' ,
+                   #'ggH_hww_230_c10brn00': '1.023/0.971' ,
+                   #'ggH_hww_SBI230_c10brn00': '1.056/0.941' ,
+                   #'ggH_hww_250_c10brn00': '1.024/0.969' ,
+                   #'ggH_hww_SBI250_c10brn00': '1.059/0.937' ,
+                   #'ggH_hww_270_c10brn00': '1.026/0.966' ,
+                   #'ggH_hww_SBI270_c10brn00': '1.063/0.932' ,
+                   #'ggH_hww_300_c10brn00': '1.024/0.969' ,
+                   #'ggH_hww_SBI300_c10brn00': '1.066/0.932' ,
+                   #'ggH_hww_350_c10brn00': '1.022/0.971' ,
+                   #'ggH_hww_SBI350_c10brn00': '1.062/0.936' ,
+                   #'ggH_hww_400_c10brn00': '1.022/0.971' ,
+                   #'ggH_hww_SBI400_c10brn00': '1.067/0.932' ,
+                   #'ggH_hww_450_c10brn00': '1.023/0.969' ,
+                   #'ggH_hww_SBI450_c10brn00': '1.078/0.922' ,
+                   #'ggH_hww_500_c10brn00': '1.025/0.966' ,
+                   #'ggH_hww_SBI500_c10brn00': '1.090/0.912' ,
+                   #'ggH_hww_550_c10brn00': '1.025/0.966' ,
+                   #'ggH_hww_SBI550_c10brn00': '1.102/0.904' ,
+                   #'ggH_hww_650_c10brn00': '1.026/0.964' ,
+                   #'ggH_hww_SBI650_c10brn00': '1.120/0.891' ,
+                   #'ggH_hww_700_c10brn00': '1.026/0.963' ,
+                   #'ggH_hww_SBI700_c10brn00': '1.127/0.886' ,
+                   #'ggH_hww_750_c10brn00': '1.025/0.964' ,
+                   #'ggH_hww_SBI750_c10brn00': '1.133/0.883' ,
+                   #'ggH_hww_800_c10brn00': '1.026/0.964' ,
+                   #'ggH_hww_SBI800_c10brn00': '1.137/0.880' ,
+                   #'ggH_hww_900_c10brn00': '1.026/0.964' ,
+                   #'ggH_hww_SBI900_c10brn00': '1.142/0.877' ,
+                   #'ggH_hww_1000_c10brn00': '1.024/0.966' ,
+                   #'ggH_hww_SBI1000_c10brn00': '1.146/0.875' ,
+                   #'ggH_hww_1500_c10brn00': '1.022/0.969' ,
+                   #'ggH_hww_SBI1500_c10brn00': '1.152/0.870' ,
+                   #'ggH_hww_2000_c10brn00': '1.021/0.972' ,
+                   #'ggH_hww_SBI2000_c10brn00': '1.155/0.869' ,
+                   #'ggH_hww_2500_c10brn00': '1.018/0.977' ,
+                   #'ggH_hww_SBI2500_c10brn00': '1.143/0.865' ,
+                   #'ggH_hww_3000_c10brn00': '1.015/0.981' ,
+                   #'ggH_hww_SBI3000_c10brn00': '1.157/0.868' ,
 
                    },
                'type'  : 'lnN',
               }
 
 
-#for m in masses:
-#  for model in models:
-#    model_name = model.replace("cprime","c").replace(".","").replace("BRnew","brn")
-#    nuisances['QCDscale_gg_accept']['samples'].update({'ggH_hww_'+m+'_'+model_name:'1.027'})
-#    nuisances['QCDscale_gg_accept']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name:'1.027'})
+for m in masses:
+
+  massA=int(m)
+  weightA1=1.04802  + (massA*3.62976e-05)+(massA*massA*-2.61565e-08 )+(massA*massA*massA*4.20694e-12 )
+  weightA=str(weightA1)
+
+  for model in models:
+    model_name = model.replace("cprime","c").replace(".","").replace("BRnew","brn")
+    nuisances['QCDscale_gg_accept']['samples'].update({'ggH_hww_'+m+'_'+model_name: weightA})
+    nuisances['QCDscale_gg_accept']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name: weightA})
 
 
 
@@ -351,7 +360,6 @@ for m in masses:
     unc1jet=str(unc["QCDscale"]["1jet"])
     unc2jet=str(unc["QCDscale"]["2jet"])
     unc3jet=str(unc["QCDscale"]["VBF"])
-
     nuisances['QCDscale']['samples'].update({'ggH_hww_'+m+'_'+model_name:[
          "("+unc0jet+"*(std_vector_jet_pt[0] < 30)+"+unc1jet+"*(std_vector_jet_pt[0] > 30 && std_vector_jet_pt[1] < 30)+"+unc2jet+"*((std_vector_jet_pt[1]> 30 ) && (mjj<500 || detajj<3.5))+"+unc3jet+"*(std_vector_jet_pt[1]> 30)*(mjj>500 && detajj>3.5))",
          "(1./("+unc0jet+"*(std_vector_jet_pt[0] < 30)+"+unc1jet+"*(std_vector_jet_pt[0] > 30 && std_vector_jet_pt[1] < 30)+"+unc2jet+"*((std_vector_jet_pt[1]> 30 ) && (mjj<500 || detajj<3.5))+"+unc3jet+"*(std_vector_jet_pt[1]> 30)*(mjj>500 && detajj>3.5)))"
@@ -363,7 +371,6 @@ for m in masses:
     unc1jet=str(unc["QCDscale1in"]["1jet"])
     unc2jet=str(unc["QCDscale1in"]["2jet"])
     unc3jet=str(unc["QCDscale1in"]["VBF"])
-
     nuisances['QCDscale1in']['samples'].update({'ggH_hww_'+m+'_'+model_name:[
          "("+unc0jet+"*(std_vector_jet_pt[0] < 30)+"+unc1jet+"*(std_vector_jet_pt[0] > 30 && std_vector_jet_pt[1] < 30)+"+unc2jet+"*((std_vector_jet_pt[1]> 30) && (mjj<500 || detajj<3.5))+"+unc3jet+"*(std_vector_jet_pt[1]> 30 )*(mjj>500 && detajj>3.5))",
          "(1./("+unc0jet+"*(std_vector_jet_pt[0] < 30)+"+unc1jet+"*(std_vector_jet_pt[0] > 30 && std_vector_jet_pt[1] < 30)+"+unc2jet+"*((std_vector_jet_pt[1]> 30) && (mjj<500 || detajj<3.5))+"+unc3jet+"*(std_vector_jet_pt[1]> 30 )*(mjj>500 && detajj>3.5)))"
@@ -374,7 +381,6 @@ for m in masses:
     unc1jet=str(unc["QCDscale2in"]["1jet"])
     unc2jet=str(unc["QCDscale2in"]["2jet"])
     unc3jet=str(unc["QCDscale2in"]["VBF"])
-
     nuisances['QCDscale2in']['samples'].update({'ggH_hww_'+m+'_'+model_name:[
          "("+unc0jet+"*(std_vector_jet_pt[0] < 30)+"+unc1jet+"*(std_vector_jet_pt[0] > 30 && std_vector_jet_pt[1] < 30)+"+unc2jet+"*((std_vector_jet_pt[1]> 30) && (mjj<500 || detajj<3.5))+"+unc3jet+"*(std_vector_jet_pt[1]> 30 )*(mjj>500 && detajj>3.5))",
          "(1./("+unc0jet+"*(std_vector_jet_pt[0] < 30)+"+unc1jet+"*(std_vector_jet_pt[0] > 30 && std_vector_jet_pt[1] < 30)+"+unc2jet+"*((std_vector_jet_pt[1]> 30) && (mjj<500 || detajj<3.5))+"+unc3jet+"*(std_vector_jet_pt[1]> 30 )*(mjj>500 && detajj>3.5)))"
@@ -385,7 +391,6 @@ for m in masses:
     unc1jet=str(unc["QCDscale3in"]["1jet"])
     unc2jet=str(unc["QCDscale3in"]["2jet"])
     unc3jet=str(unc["QCDscale3in"]["VBF"])
-
     nuisances['QCDscale3in']['samples'].update({'ggH_hww_'+m+'_'+model_name:[
          "("+unc0jet+"*(std_vector_jet_pt[0] < 30)+"+unc1jet+"*(std_vector_jet_pt[0] > 30 && std_vector_jet_pt[1] < 30)+"+unc2jet+"*((std_vector_jet_pt[1]> 30) && (mjj<500 || detajj<3.5))+"+unc3jet+"*(std_vector_jet_pt[1]> 30 )*(mjj>500 && detajj>3.5))",
          "(1./("+unc0jet+"*(std_vector_jet_pt[0] < 30)+"+unc1jet+"*(std_vector_jet_pt[0] > 30 && std_vector_jet_pt[1] < 30)+"+unc2jet+"*((std_vector_jet_pt[1]> 30) && (mjj<500 || detajj<3.5))+"+unc3jet+"*(std_vector_jet_pt[1]> 30 )*(mjj>500 && detajj>3.5)))"
@@ -427,7 +432,8 @@ for m in masses:
   for model in models:
     model_name = model.replace("cprime","c").replace(".","").replace("BRnew","brn")
     nuisances['pdf_qqbar']['samples'].update({'qqH_hww_'+m+'_'+model_name:HiggsXS.GetHiggsProdXSNP('YR4prel','13TeV','vbfH',m,'pdf','bsm')})
-
+    nuisances['pdf_qqbar']['samples'].update({'qqH_hww_SBI'+m+'_'+model_name:HiggsXS.GetHiggsProdXSNP('YR4prel','13TeV','vbfH',m,'pdf','bsm')})
+#Add qq_SBI
 
 #For the HM singals, the un. are taken from in 0 jet
 nuisances['pdf_gg_accept']  = {
@@ -437,101 +443,108 @@ nuisances['pdf_gg_accept']  = {
                    'ggH_hww' : '1.005',
                    'H_htt'   : '1.005',
                    'ggZH_hww': '1.005',
-                   'ggH_hww_200_c10brn00': '1.007',
-                   'ggH_hww_SBI200_c10brn00': '1.005',
-                   'ggH_hww_210_c10brn00': '1.007',
-                   'ggH_hww_SBI210_c10brn00': '1.005',
-                   'ggH_hww_230_c10brn00': '1.007',
-                   'ggH_hww_SBI230_c10brn00': '1.005',
-                   'ggH_hww_250_c10brn00': '1.007',
-                   'ggH_hww_SBI250_c10brn00': '1.005',
-                   'ggH_hww_270_c10brn00': '1.007',
-                   'ggH_hww_SBI270_c10brn00': '1.006',
-                   'ggH_hww_300_c10brn00': '1.007',
-                   'ggH_hww_SBI300_c10brn00': '1.006',
-                   'ggH_hww_350_c10brn00': '1.007',
-                   'ggH_hww_SBI350_c10brn00': '1.006',
-                   'ggH_hww_400_c10brn00': '1.007',
-                   'ggH_hww_SBI400_c10brn00': '1.006',
-                   'ggH_hww_450_c10brn00': '1.007',
-                   'ggH_hww_SBI450_c10brn00': '1.007',
-                   'ggH_hww_500_c10brn00': '1.007',
-                   'ggH_hww_SBI500_c10brn00': '1.008',
-                   'ggH_hww_550_c10brn00': '1.007',
-                   'ggH_hww_SBI550_c10brn00': '1.010',
-                   'ggH_hww_650_c10brn00': '1.007',
-                   'ggH_hww_SBI650_c10brn00': '1.012',
-                   'ggH_hww_700_c10brn00': '1.007',
-                   'ggH_hww_SBI700_c10brn00': '1.014',
-                   'ggH_hww_750_c10brn00': '1.007',
-                   'ggH_hww_SBI750_c10brn00': '1.015',
-                   'ggH_hww_800_c10brn00': '1.007',
-                   'ggH_hww_SBI800_c10brn00': '1.016',
-                   'ggH_hww_900_c10brn00': '1.007',
-                   'ggH_hww_SBI900_c10brn00': '1.019',
-                   'ggH_hww_1000_c10brn00': '1.007',
-                   'ggH_hww_SBI1000_c10brn00': '1.021',
-                   'ggH_hww_1500_c10brn00': '1.009',
-                   'ggH_hww_SBI1500_c10brn00': '1.029',
-                   'ggH_hww_2000_c10brn00': '1.010',
-                   'ggH_hww_SBI2000_c10brn00': '1.035',
-                   'ggH_hww_2500_c10brn00': '1.016',
-                   'ggH_hww_SBI2500_c10brn00': '1.014',
-                   'ggH_hww_3000_c10brn00': '1.022',
-                   'ggH_hww_SBI3000_c10brn00': '1.046',
+                   #'ggH_hww_200_c10brn00': '1.007',
+                   #'ggH_hww_SBI200_c10brn00': '1.005',
+                   #'ggH_hww_210_c10brn00': '1.007',
+                   #'ggH_hww_SBI210_c10brn00': '1.005',
+                   #'ggH_hww_230_c10brn00': '1.007',
+                   #'ggH_hww_SBI230_c10brn00': '1.005',
+                   #'ggH_hww_250_c10brn00': '1.007',
+                   #'ggH_hww_SBI250_c10brn00': '1.005',
+                   #'ggH_hww_270_c10brn00': '1.007',
+                   #'ggH_hww_SBI270_c10brn00': '1.006',
+                   #'ggH_hww_300_c10brn00': '1.007',
+                   #'ggH_hww_SBI300_c10brn00': '1.006',
+                   #'ggH_hww_350_c10brn00': '1.007',
+                   #'ggH_hww_SBI350_c10brn00': '1.006',
+                   #'ggH_hww_400_c10brn00': '1.007',
+                   #'ggH_hww_SBI400_c10brn00': '1.006',
+                   #'ggH_hww_450_c10brn00': '1.007',
+                   #'ggH_hww_SBI450_c10brn00': '1.007',
+                   #'ggH_hww_500_c10brn00': '1.007',
+                   #'ggH_hww_SBI500_c10brn00': '1.008',
+                   #'ggH_hww_550_c10brn00': '1.007',
+                   #'ggH_hww_SBI550_c10brn00': '1.010',
+                   #'ggH_hww_650_c10brn00': '1.007',
+                   #'ggH_hww_SBI650_c10brn00': '1.012',
+                   #'ggH_hww_700_c10brn00': '1.007',
+                   #'ggH_hww_SBI700_c10brn00': '1.014',
+                   #'ggH_hww_750_c10brn00': '1.007',
+                   #'ggH_hww_SBI750_c10brn00': '1.015',
+                   #'ggH_hww_800_c10brn00': '1.007',
+                   #'ggH_hww_SBI800_c10brn00': '1.016',
+                   #'ggH_hww_900_c10brn00': '1.007',
+                   #'ggH_hww_SBI900_c10brn00': '1.019',
+                   #'ggH_hww_1000_c10brn00': '1.007',
+                   #'ggH_hww_SBI1000_c10brn00': '1.021',
+                   #'ggH_hww_1500_c10brn00': '1.009',
+                   #'ggH_hww_SBI1500_c10brn00': '1.029',
+                   #'ggH_hww_2000_c10brn00': '1.010',
+                   #'ggH_hww_SBI2000_c10brn00': '1.035',
+                   #'ggH_hww_2500_c10brn00': '1.016',
+                   #'ggH_hww_SBI2500_c10brn00': '1.014',
+                   #'ggH_hww_3000_c10brn00': '1.022',
+                   #'ggH_hww_SBI3000_c10brn00': '1.046',
 
                    },
                'type'  : 'lnN',
               }
-#for m in masses:
-#  for model in models:
-#    model_name = model.replace("cprime","c").replace(".","").replace("BRnew","brn")
-#    nuisances['pdf_gg_accept']['samples'].update({'ggH_hww_'+m+'_'+model_name:'1.005'})
-#    nuisances['pdf_gg_accept']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name:'1.005'})
-#Controllare il 0.5%
+for m in masses:
+  for model in models:
+    model_name = model.replace("cprime","c").replace(".","").replace("BRnew","brn")
+    if m<1500:
+      nuisances['pdf_gg_accept']['samples'].update({'ggH_hww_'+m+'_'+model_name:'1.007'})
+      nuisances['pdf_gg_accept']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name:'1.010'})
+    if m>1499:
+      nuisances['pdf_gg_accept']['samples'].update({'ggH_hww_'+m+'_'+model_name:'1.012'})
+      nuisances['pdf_gg_accept']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name:'1.035'})
+
 
 #For the HM singals, the un. are taken from in VBF cat
 nuisances['pdf_qqbar_accept']  = {
                'name'  : 'pdf_qqbar_accept',
                'type'  : 'lnN',
                'samples'  : {
-                   #
+
                    'qqH_hww' : '1.011',
                    'WH_hww'  : '1.007',
                    'ZH_hww'  : '1.012',
                    'VZ'      : '1.005',
-                   'qqH_hww_200_c10brn00': '1.005',
-                   'qqH_hww_210_c10brn00': '1.005',
-                   'qqH_hww_230_c10brn00': '1.005',
-                   'qqH_hww_250_c10brn00': '1.004',
-                   'qqH_hww_270_c10brn00': '1.005',
-                   'qqH_hww_300_c10brn00': '1.004',
-                   'qqH_hww_350_c10brn00': '1.005',
-                   'qqH_hww_400_c10brn00': '1.005',
-                   'qqH_hww_450_c10brn00': '1.005',
-                   'qqH_hww_500_c10brn00': '1.006',
-                   'qqH_hww_550_c10brn00': '1.006',
-                   'qqH_hww_650_c10brn00': '1.006',
-                   'qqH_hww_700_c10brn00': '1.005',
-                   'qqH_hww_750_c10brn00': '1.007',
-                   'qqH_hww_800_c10brn00': '1.007',
-                   'qqH_hww_900_c10brn00': '1.007',
-                   'qqH_hww_1000_c10brn00': '1.009',
-                   'qqH_hww_1500_c10brn00': '1.012',
-                   'qqH_hww_2000_c10brn00': '1.014',
-                   'qqH_hww_2500_c10brn00': '1.017',
-                   'qqH_hww_3000_c10brn00': '1.022',
+                   #'qqH_hww_200_c10brn00': '1.005',
+                   #'qqH_hww_210_c10brn00': '1.005',
+                   #'qqH_hww_230_c10brn00': '1.005',
+                   #'qqH_hww_250_c10brn00': '1.004',
+                   #'qqH_hww_270_c10brn00': '1.005',
+                   #'qqH_hww_300_c10brn00': '1.004',
+                   #'qqH_hww_350_c10brn00': '1.005',
+                   #'qqH_hww_400_c10brn00': '1.005',
+                   #'qqH_hww_450_c10brn00': '1.005',
+                   #'qqH_hww_500_c10brn00': '1.006',
+                   #'qqH_hww_550_c10brn00': '1.006',
+                   #'qqH_hww_650_c10brn00': '1.006',
+                   #'qqH_hww_700_c10brn00': '1.005',
+                   #'qqH_hww_750_c10brn00': '1.007',
+                   #'qqH_hww_800_c10brn00': '1.007',
+                   #'qqH_hww_900_c10brn00': '1.007',
+                   #'qqH_hww_1000_c10brn00': '1.009',
+                   #'qqH_hww_1500_c10brn00': '1.012',
+                   #'qqH_hww_2000_c10brn00': '1.014',
+                   #'qqH_hww_2500_c10brn00': '1.017',
+                   #'qqH_hww_3000_c10brn00': '1.022',
 
                    },
               }
 
 
-#for m in masses:
-#  for model in models:
-#    model_name = model.replace("cprime","c").replace(".","").replace("BRnew","brn")
-#    nuisances['pdf_qqbar_accept']['samples'].update({'qqH_hww_'+m+'_'+model_name:'1.011'})
-#Controllare il 1.1%
-"""
+for m in masses:
+  for model in models:
+    model_name = model.replace("cprime","c").replace(".","").replace("BRnew","brn")
+    if m<1000:
+      nuisances['pdf_qqbar_accept']['samples'].update({'qqH_hww_'+m+'_'+model_name:'1.005'})
+      nuisances['pdf_qqbar_accept']['samples'].update({'qqH_hww_SBI'+m+'_'+model_name:'1.005'})
+    if m>999:
+      nuisances['pdf_qqbar_accept']['samples'].update({'qqH_hww_'+m+'_'+model_name:'1.015'})
+      nuisances['pdf_qqbar_accept']['samples'].update({'qqH_hww_SBI'+m+'_'+model_name:'1.015'})
 
 
 #######################################
@@ -546,7 +559,8 @@ nuisances['QCDscale_ggWW']  = {
                    },
               }
 
-"""
+
+
 #  - WW shaping
 nuisances['WWresum0j']  = {
                 'name'  : 'WWresum0j',
@@ -650,7 +664,7 @@ nuisances['UE']  = {
 
 
 ####################################
-"""
+
 
 nuisances['WgStarScale']  = {
                'name'  : 'WgStarScale',
@@ -688,7 +702,7 @@ nuisances['DYttnorm2j']  = {
                'type'  : 'rateParam',
                'cuts'  : regions2j_of
               }
-"""
+
 nuisances['DYttnorm2jVBF']  = {
                'name'  : 'CMS_hwwhmof_DYttnorm2jVBF',
                'samples'  : {
@@ -697,7 +711,7 @@ nuisances['DYttnorm2jVBF']  = {
                'type'  : 'rateParam',
                'cuts'  : regions2j_VBF_of
               }
-"""
+
 
 nuisances['WWofnorm0j']  = {
                'name'  : 'CMS_hwwhmof_WWofnorm0j',
@@ -725,7 +739,7 @@ nuisances['WWofnorm2j']  = {
                'type'  : 'rateParam',
                'cuts'  : regions2j
               }
-"""
+
 nuisances['WWofnorm2jVBF']  = {
                'name'  : 'CMS_hwwhmof_WWnorm2jVBF',
                'samples'  : {
@@ -734,7 +748,6 @@ nuisances['WWofnorm2jVBF']  = {
                'type'  : 'rateParam',
                'cuts'  : regions2j_VBF
               }
-"""
 
 nuisances['Topofnorm0j']  = {
                'name'  : 'CMS_hwwhmof_Topnorm0j',
@@ -762,7 +775,7 @@ nuisances['Topofnorm2j']  = {
                'type'  : 'rateParam',
                'cuts'  : regions2j
               }
-"""
+
 nuisances['Topofnorm2jVBF']  = {
                'name'  : 'CMS_hwwhmof_Topnorm2jVBF',
                'samples'  : {
@@ -772,8 +785,8 @@ nuisances['Topofnorm2jVBF']  = {
                'cuts'  : regions2j_VBF
               }
 
-"""
-"""
+
+
 
 
 
@@ -801,15 +814,16 @@ nuisances['TopPS']  = {
 }
 
 
-"""
+
 ###############################################################################
 #### Luminosity
 nuisances['lumi']  = {
                'name'  : 'lumi_13TeV',
                'samples'  : {
-                   #'DY'       : '1.025',    #\
-                   #'top'      : '1.025',    #|--> controlled via rateParams
-                   #'WW'       : '1.025',    #/
+                   #'DY'       : '1.025',    \
+                   #'top'      : '1.025',    |--> controlled via rateParams
+                   #'WW'       : '1.025',    /
+
                    'ggWW'     : '1.025',
                    'Vg'       : '1.025',
                    'VgS'      : '1.025',
@@ -832,7 +846,7 @@ for m in masses:
     nuisances['lumi']['samples'].update({'ggH_hww_'+m+'_'+model_name:'1.025'})
     nuisances['lumi']['samples'].update({'qqH_hww_'+m+'_'+model_name:'1.025'})
     nuisances['lumi']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name:'1.025'})
-"""
+    nuisances['lumi']['samples'].update({'qqH_hww_SBI'+m+'_'+model_name:'1.025'})
 
 
 ############################ FAKES ###################################################################################### ok!
@@ -857,7 +871,7 @@ else:
   fakeW_statEleDown = '( fakeW_ele_'+eleWP+'_mu_'+muWP+'_'+Nlep+'lstatElDown / fakeW_ele_'+eleWP+'_mu_'+muWP+'_'+Nlep+'l )'
   fakeW_statMuUp    = '( fakeW_ele_'+eleWP+'_mu_'+muWP+'_'+Nlep+'lstatMuUp   / fakeW_ele_'+eleWP+'_mu_'+muWP+'_'+Nlep+'l )'
   fakeW_statMuDown  = '( fakeW_ele_'+eleWP+'_mu_'+muWP+'_'+Nlep+'lstatMuDown / fakeW_ele_'+eleWP+'_mu_'+muWP+'_'+Nlep+'l )'
-"""
+
 nuisances['fake_syst']  = {
                'name'  : 'CMS_hwwof_fake_syst',
                'type'  : 'lnN',
@@ -865,7 +879,7 @@ nuisances['fake_syst']  = {
                              'Fake' : '1.30',
                              },
 }
-"""
+
 nuisances['fake_ele']  = {
                 'name'  : 'fake_ele_hww',
                 'kind'  : 'weight',
@@ -911,6 +925,7 @@ nuisances['btagbc']  = {
                 'kind'  : 'weight',
                'type'  : 'shape',
                 'samples'  : {
+
                    'DY'      : ['('+bSF+'_bc_up)/('+bSF+')', '('+bSF+'_bc_down)/('+bSF+')'],
                    'WW'      : ['('+bSF+'_bc_up)/('+bSF+')', '('+bSF+'_bc_down)/('+bSF+')'],
                    'ggWW'    : ['('+bSF+'_bc_up)/('+bSF+')', '('+bSF+'_bc_down)/('+bSF+')'],
@@ -935,13 +950,14 @@ for m in masses:
     nuisances['btagbc']['samples'].update({'ggH_hww_'+m+'_'+model_name: ['('+bSF+'_bc_up)/('+bSF+')', '('+bSF+'_bc_down)/('+bSF+')']})
     nuisances['btagbc']['samples'].update({'qqH_hww_'+m+'_'+model_name: ['('+bSF+'_bc_up)/('+bSF+')', '('+bSF+'_bc_down)/('+bSF+')']})
     nuisances['btagbc']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name: ['('+bSF+'_bc_up)/('+bSF+')', '('+bSF+'_bc_down)/('+bSF+')']})
-
+    nuisances['btagbc']['samples'].update({'qqH_hww_SBI'+m+'_'+model_name: ['('+bSF+'_bc_up)/('+bSF+')', '('+bSF+'_bc_down)/('+bSF+')']})
 
 nuisances['btagudsg']  = {
                 'name'  : 'btag_light',
                 'kind'  : 'weight',
                 'type'  : 'shape',
                 'samples'  : {
+
                    'DY'      : ['('+bSF+'_udsg_up)/('+bSF+')', '('+bSF+'_udsg_down)/('+bSF+')'],
                    'VVV'     : ['('+bSF+'_udsg_up)/('+bSF+')', '('+bSF+'_udsg_down)/('+bSF+')'],
                    'VZ'      : ['('+bSF+'_udsg_up)/('+bSF+')', '('+bSF+'_udsg_down)/('+bSF+')'],
@@ -966,7 +982,7 @@ for m in masses:
     nuisances['btagudsg']['samples'].update({'ggH_hww_'+m+'_'+model_name:['('+bSF+'_udsg_up)/('+bSF+')', '('+bSF+'_udsg_down)/('+bSF+')']})
     nuisances['btagudsg']['samples'].update({'qqH_hww_'+m+'_'+model_name:['('+bSF+'_udsg_up)/('+bSF+')', '('+bSF+'_udsg_down)/('+bSF+')']})
     nuisances['btagudsg']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name:['('+bSF+'_udsg_up)/('+bSF+')', '('+bSF+'_udsg_down)/('+bSF+')']})
-"""
+    nuisances['btagudsg']['samples'].update({'qqH_hww_SBI'+m+'_'+model_name:['('+bSF+'_udsg_up)/('+bSF+')', '('+bSF+'_udsg_down)/('+bSF+')']})
 
 
 ############################ Trigger Efficiency ###########
@@ -975,12 +991,13 @@ if   Nlep == '2' : trig_syst = ['(effTrigW_Up)/(effTrigW)', '(effTrigW_Down)/(ef
 elif Nlep == '3' : trig_syst = ['(effTrigW3l_Up)/(effTrigW3l)', '(effTrigW3l_Down)/(effTrigW3l)']
 # !!!!! We don't have the trigger formula implemented for 4l !!!! -> Use 3l but not correct
 elif Nlep == '4' : trig_syst = ['(effTrigW3l_Up)/(effTrigW3l)', '(effTrigW3l_Down)/(effTrigW3l)']
-"""
+
 nuisances['trigg']  = {
                 'name'  : 'trigger',
                 'kind'  : 'weight',
                 'type'  : 'shape',
                 'samples'  : {
+
                    'DY'      : trig_syst ,
                    'VVV'     : trig_syst ,
                    'VZ'      : trig_syst ,
@@ -1006,21 +1023,22 @@ for m in masses:
     nuisances['trigg']['samples'].update({'ggH_hww_'+m+'_'+model_name: trig_syst })
     nuisances['trigg']['samples'].update({'qqH_hww_'+m+'_'+model_name:  trig_syst})
     nuisances['trigg']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name: trig_syst})
+    nuisances['trigg']['samples'].update({'qqH_hww_SBI'+m+'_'+model_name: trig_syst})
 
 
-"""
 ################### Electron Efficiency and energy scale ##########ok!
 
 id_syst_ele = [ 'LepSF'+Nlep+'l__ele_'+eleWP+'__Up' , 'LepSF'+Nlep+'l__ele_'+eleWP+'__Do' ]
 
 
-"""
+
 nuisances['eff_e']  = {
                 'name'  : 'eff_e',
                 'kind'  : 'weight',
                 'type'  : 'shape',
                 'samples'  : {
-                    'DY'      : id_syst_ele ,
+
+                   'DY'      : id_syst_ele ,
                    'VVV'     : id_syst_ele ,
                    'VZ'      : id_syst_ele ,
                    'ggWW'    : id_syst_ele ,
@@ -1044,14 +1062,15 @@ for m in masses:
     nuisances['eff_e']['samples'].update({'ggH_hww_'+m+'_'+model_name: id_syst_ele })
     nuisances['eff_e']['samples'].update({'qqH_hww_'+m+'_'+model_name: id_syst_ele })
     nuisances['eff_e']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name: id_syst_ele })
+    nuisances['eff_e']['samples'].update({'qqH_hww_SBI'+m+'_'+model_name: id_syst_ele })
 
-"""
-"""
+
 nuisances['electronpt']  = {
                 'name'  : 'scale_e',
                 'kind'  : 'tree',
                 'type'  : 'shape',
                 'samples'  : {
+
                    'DY' :  ['1', '1'],
                    'ggWW' :['1', '1'],
                    'WW' :  ['1', '1'],
@@ -1081,7 +1100,7 @@ for m in masses:
     nuisances['electronpt']['samples'].update({'ggH_hww_'+m+'_'+model_name:['1', '1']})
     nuisances['electronpt']['samples'].update({'qqH_hww_'+m+'_'+model_name:['1', '1']})
     nuisances['electronpt']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name:['1', '1']})
-
+    nuisances['electronpt']['samples'].update({'qqH_hww_SBI'+m+'_'+model_name:['1', '1']})
 
 
 
@@ -1091,6 +1110,7 @@ nuisances['elePtCor']  = {
                 'kind'  : 'weight',
                 'type'  : 'shape',
                 'samples'  : {
+
                    'DY'         : elePtCor_Syst ,
                    'ggWW'       : elePtCor_Syst ,
                    'WW'         : elePtCor_Syst ,
@@ -1118,7 +1138,7 @@ for m in masses:
     nuisances['elePtCor']['samples'].update({'ggH_hww_'+m+'_'+model_name: elePtCor_Syst})
     nuisances['elePtCor']['samples'].update({'qqH_hww_'+m+'_'+model_name: elePtCor_Syst})
     nuisances['elePtCor']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name: elePtCor_Syst})
-
+    nuisances['elePtCor']['samples'].update({'qqH_hww_SBI'+m+'_'+model_name: elePtCor_Syst})
 
 eleEtaCor_Syst = [ 'electron_etaW_'+Nlep+'l_Up / electron_etaW_'+Nlep+'l', 'electron_etaW_'+Nlep+'l_Down / electron_etaW_'+Nlep+'l']
 
@@ -1154,20 +1174,21 @@ for m in masses:
     nuisances['eleEtaCor']['samples'].update({'ggH_hww_'+m+'_'+model_name:  eleEtaCor_Syst})
     nuisances['eleEtaCor']['samples'].update({'qqH_hww_'+m+'_'+model_name:  eleEtaCor_Syst})
     nuisances['eleEtaCor']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name:  eleEtaCor_Syst})
+    nuisances['eleEtaCor']['samples'].update({'qqH_hww_SBI'+m+'_'+model_name:  eleEtaCor_Syst})
 
-"""
 ############# Muon Efficiency and energy scale  #######
 
 id_syst_mu = [ 'LepSF'+Nlep+'l__mu_'+muWP+'__Up' , 'LepSF'+Nlep+'l__mu_'+muWP+'__Do' ]
 
 
-"""
+
 nuisances['eff_m']  = {
                 'name'  : 'eff_m',
                 'kind'  : 'weight',
                 'type'  : 'shape',
                 'samples'  : {
-                    'DY'      : id_syst_mu ,
+
+                   'DY'      : id_syst_mu ,
                    'VVV'     : id_syst_mu ,
                    'VZ'      : id_syst_mu ,
                    'ggWW'    : id_syst_mu ,
@@ -1191,14 +1212,15 @@ for m in masses:
     nuisances['eff_m']['samples'].update({'ggH_hww_'+m+'_'+model_name: id_syst_mu })
     nuisances['eff_m']['samples'].update({'qqH_hww_'+m+'_'+model_name: id_syst_mu })
     nuisances['eff_m']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name: id_syst_mu })
+    nuisances['eff_m']['samples'].update({'qqH_hww_SBI'+m+'_'+model_name: id_syst_mu })
 
-"""
-"""
+
 nuisances['muonpt']  = {
                 'name'  : 'scale_m',
                 'kind'  : 'tree',
                 'type'  : 'shape',
                 'samples'  : {
+
                    'ggWW' :['1', '1'],
                    'WW' :  ['1', '1'],
                    'DY' :  ['1', '1'],
@@ -1230,7 +1252,7 @@ for m in masses:
     nuisances['muonpt']['samples'].update({'ggH_hww_'+m+'_'+model_name:['1', '1']})
     nuisances['muonpt']['samples'].update({'qqH_hww_'+m+'_'+model_name:['1', '1']})
     nuisances['muonpt']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name:['1', '1']})
-
+    nuisances['muonpt']['samples'].update({'qqH_hww_SBI'+m+'_'+model_name:['1', '1']})
 
 
 ##### Jet energy scale
@@ -1240,6 +1262,7 @@ nuisances['jes']  = {
                 'kind'  : 'tree',
                 'type'  : 'shape',
                 'samples'  : {
+
                    'ggWW' :['1', '1'],
                    'WW' :  ['1', '1'],
                    'DY' :  ['1', '1'],
@@ -1269,7 +1292,7 @@ for m in masses:
     nuisances['jes']['samples'].update({'ggH_hww_'+m+'_'+model_name:['1', '1']})
     nuisances['jes']['samples'].update({'qqH_hww_'+m+'_'+model_name:['1', '1']})
     nuisances['jes']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name:['1', '1']})
-
+    nuisances['jes']['samples'].update({'qqH_hww_SBI'+m+'_'+model_name:['1', '1']})
 
 
 ##### MET energy scale########## ok!
@@ -1279,6 +1302,7 @@ nuisances['met']  = {
                 'kind'  : 'tree',
                 'type'  : 'shape',
                 'samples'  : {
+
                    'ggWW' :['1', '1'],
                    'WW' :  ['1', '1'],
                    'DY' :  ['1', '1'],
@@ -1309,7 +1333,7 @@ for m in masses:
     nuisances['met']['samples'].update({'ggH_hww_'+m+'_'+model_name:['1', '1']})
     nuisances['met']['samples'].update({'qqH_hww_'+m+'_'+model_name:['1', '1']})
     nuisances['met']['samples'].update({'ggH_hww_SBI'+m+'_'+model_name:['1', '1']})
-
+    nuisances['met']['samples'].update({'qqH_hww_SBI'+m+'_'+model_name:['1', '1']})
 
 
 nuisances['DYQCDscale']  = {
@@ -1322,7 +1346,21 @@ nuisances['DYQCDscale']  = {
                 }
 }
 
-"""
+
+
+nuisances['WW2JQCDscale']  = {
+                'name'  : 'WW2J_QCDscale_V',
+                'skipCMS' : 1,
+                'kind'  : 'weight',
+                'type'  : 'shape',
+                'samples'  : {
+                   'qqWWqq'      : ['std_vector_LHE_weight[8]/std_vector_LHE_weight[0]', 'std_vector_LHE_weight[4]/std_vector_LHE_weight[0]'],
+                   'WW2J'      : ['std_vector_LHE_weight[8]/std_vector_LHE_weight[0]', 'std_vector_LHE_weight[4]/std_vector_LHE_weight[0]'],
+                }
+}
+
+
+
 ## Use the following if you want to apply the automatic combine MC stat nuisances.
 nuisances['stat']  = {
               'type'  : 'auto',
