@@ -7,11 +7,12 @@
 
 
 groupPlot['top'] = {
-    'nameHR': 'tW and tt',
+    'nameHR': 'tW and t#bart',
     'isSignal': 0,
     'color': 400,   # kYellow
     'samples': ['top']
 }
+
 
 groupPlot['DY'] = {
     'nameHR': "DY",
@@ -21,19 +22,18 @@ groupPlot['DY'] = {
 }
 
 
-groupPlot['Fake'] = {
-    'nameHR': 'Fake',
-    'isSignal': 0,
-    'color': 921,    # kGray + 1
-    'samples': ['Fake']
-}
-
-
 groupPlot['WW'] = {
     'nameHR': 'WW',
     'isSignal': 0,
     'color': 851,  # kAzure -9
     'samples': ['WW', 'ggWW', 'qqWWqq', 'WW2J']
+}
+
+groupPlot['Fake'] = {
+    'nameHR': 'Fake',
+    'isSignal': 0,
+    'color': 921,    # kGray + 1
+    'samples': ['FakeOF']
 }
 
 
@@ -68,46 +68,49 @@ groupPlot['Higgs'] = {
 }
 
 
-groupPlot['150'] = {
-    'nameHR': 'mH = 150 GeV',
+# groupPlot['800']  = {
+#                  'nameHR' : 'mH = 800 GeV X10',
+#                  'isSignal' : 2,
+#                  'color': 603, # kRed
+#                  'samples'  : ['ggH_hww_800_c10brn00','ggH_hwwSBI_800_c10brn00','qqH_hww_800_c10brn00']
+#               }
+#
+
+
+# Separated ggH, SBI, VBF mH=400
+
+groupPlot['400'] = {
+    'nameHR': 'mH=400 GeV',
     'isSignal': 2,
     'color': 633,  # kRed
-    'samples': ['ggH_hww_150_c10brn00', 'ggH_hww_SBI150_c10brn00', 'qqH_hww_150_c10brn00']
+    'samples': ['ggH_hww_400_c10brn00', 'ggH_hww_SBI400_c10brn00', 'qqH_hww_400_c10brn00']
 }
 
 
-groupPlot['300'] = {
-    'nameHR': 'mH = 300 GeV',
+groupPlot['400_ggH'] = {
+    'nameHR': 'mH ggH=400 GeV',
     'isSignal': 2,
-    'color': 603,  # kRed
-    'samples': ['ggH_hww_300_c10brn00', 'ggH_hwwSBI_300_c10brn00', 'qqH_hww_300_c10brn00']
+    'color': 4,  # kRed
+    'samples': ['ggH_hww_400_c10brn00']
 }
 
 
-'''
-#Separated ggH, SBI, VBF
-groupPlot['400']  = {
-                  'nameHR' : 'mH = 400 GeV',
-                  'isSignal' : 2,
-                  'color': 633, # kRed
-                  'samples'  : ['ggH_hww_400_c10brn00']
-               }
+groupPlot['400_VBF'] = {
+    'nameHR': 'mH VBF=400 GeV',
+    'isSignal': 2,
+    'color': 6,  # kRed
+    'samples': ['qqH_hww_400_c10brn00']
+}
 
-groupPlot['400_SBI']  = {
-                  'nameHR' : 'mH SBI= 400 GeV',
-                  'isSignal' : 2,
-                  'color': 4, # kRed
-                  'samples'  : ['ggH_hww_SBI400_c10brn00']
-               }
 
-groupPlot['400_VBF']  = {
-                  'nameHR' : 'mH VBF= 400 GeV',
-                  'isSignal' : 2,
-                  'color': 6, # kRed
-                  'samples'  : ['qqH_hww_400_c10brn00']
-               }
-'''
+groupPlot['400_SBI'] = {
+    'nameHR': 'mH SBI= 400 GeV',
+    'isSignal': 2,
+    'color': 4,  # kRed
+    'samples': ['ggH_hww_SBI400_c10brn00']
+}
 
+#############################
 
 plot['ttbar'] = {
     'nameHR': 't#bart',
@@ -181,7 +184,7 @@ plot['Wjets'] = {
 }
 
 
-plot['Fake'] = {
+plot['FakeOF'] = {
     'color': 921,    # kGray + 1
     'isSignal': 0,
     'isData': 0,
@@ -359,8 +362,8 @@ plot['ggH_hww'] = {
 # Signal
 
 
-plot['ggH_hww_150_c10brn00'] = {
-    'nameHR': 'ggH 150',
+plot['ggH_hww_400_c10brn00'] = {
+    'nameHR': 'ggH 400',
     'color': 600,  # kRed
     #'color':   col,
     'isSignal': 2,
@@ -373,22 +376,23 @@ plot['ggH_hww_150_c10brn00'] = {
                    'hwwhm_13TeV_of_VBF': 1,
     }
 }
-plot['ggH_hww_SBI150_c10brn00'] = {
-    'nameHR': 'ggH 150',
+plot['ggH_hww_SBI400_c10brn00'] = {
+    'nameHR': 'ggH 400',
     'color': 600,  # kRed
               #'color':   col,
               'isSignal': 2,
               'isData': 0,
-              'scale': 1,    #
-    'cuts': {
-        'hwwhm_13TeV_of_0j': 1,
-        'hwwhm_13TeV_of_1j': 1,
-        'hwwhm_13TeV_of2j': 1,
-        'hwwhm_13TeV_of_VBF': 1,
-    }
+              'scale': 1,
+              'cuts': {
+                  'hwwhm_13TeV_of_0j': 1,
+                  'hwwhm_13TeV_of_1j': 1,
+                  'hwwhm_13TeV_of2j': 1,
+                  'hwwhm_13TeV_of_VBF': 1,
+              }
 }
-plot['qqH_hww_150_c10brn00'] = {
-    'nameHR': 'qqH 150',
+
+plot['qqH_hww_400_c10brn00'] = {
+    'nameHR': 'qqH 400',
     'color': 600,  # kRed
               'isSignal': 2,
               'isData': 0,
@@ -402,96 +406,91 @@ plot['qqH_hww_150_c10brn00'] = {
 }
 
 
-plot['ggH_hww_300_c10brn00'] = {
-    'nameHR': 'ggH 300',
+plot['ggH_hww_800_c10brn00'] = {
+    'nameHR': 'ggH 800',
     'color': 600,  # kRed
     #'color':   col,
     'isSignal': 2,
     'isData': 0,
     'scale': 1,    #
     'cuts': {
-                   'hwwhm_13TeV_of_0j': 1,
-                   'hwwhm_13TeV_of_1j': 1,
-                   'hwwhm_13TeV_of2j': 1,
-                   'hwwhm_13TeV_of_VBF': 1,
+                   'hwwhm_13TeV_of_0j': 100,
+                   'hwwhm_13TeV_of_1j': 100,
+                   'hwwhm_13TeV_of2j': 100,
+                   'hwwhm_13TeV_of_VBF': 100,
     }
 }
-plot['ggH_hww_SBI300_c10brn00'] = {
-    'nameHR': 'ggH 300',
+
+plot['ggH_hww_SBI800_c10brn00'] = {
+    'nameHR': 'ggH 800',
     'color': 600,  # kRed
               #'color':   col,
               'isSignal': 2,
               'isData': 0,
               'scale': 1,    #
     'cuts': {
-        'hwwhm_13TeV_of_0j': 1,
-        'hwwhm_13TeV_of_1j': 1,
-        'hwwhm_13TeV_of2j': 1,
-        'hwwhm_13TeV_of_VBF': 1,
+        'hwwhm_13TeV_of_0j': 100,
+        'hwwhm_13TeV_of_1j': 100,
+        'hwwhm_13TeV_of2j': 100,
+        'hwwhm_13TeV_of_VBF': 100,
     }
 }
-plot['qqH_hww_300_c10brn00'] = {
-    'nameHR': 'qqH 300',
+plot['qqH_hww_800_c10brn00'] = {
+    'nameHR': 'qqH 800',
     'color': 600,  # kRed
               'isSignal': 2,
               'isData': 0,
               'scale': 1,    #
     'cuts': {
-        'hwwhm_13TeV_of_0j': 1,
-        'hwwhm_13TeV_of_1j': 1,
-        'hwwhm_13TeV_of2j': 1,
-        'hwwhm_13TeV_of_VBF': 1,
+        'hwwhm_13TeV_of_0j': 100,
+        'hwwhm_13TeV_of_1j': 100,
+        'hwwhm_13TeV_of2j': 100,
+        'hwwhm_13TeV_of_VBF': 100,
     }
 }
 
-import os.path
 
-massesAndModelsFile = "massesAndModels.py"
-
-if os.path.exists(massesAndModelsFile):
-    handle = open(massesAndModelsFile, 'r')
-    exec(handle)
-    handle.close()
-else:
-    print "!!! ERROR file ", massesAndModelsFile, " does not exist."
-
-for m in masses:
-    for model in models:
-        model_name = model.replace("cprime", "c").replace(
-            ".", "").replace("BRnew", "brn")
-
-        plot['ggH_hww_' + m + '_' + model_name] = {
-            'nameHR': 'ggH ' + m + ' ' + model,
-                      'color': 600 + int(int(m) / 100 + 0.5),  # kRed
-                      #'color':   col,
-                      'isSignal': 2,
-                      'isData': 0,
-                      'scale': 1    #
-        }
-        plot['ggH_hww_SBI' + m + '_' + model_name] = {
-            'nameHR': 'ggH ' + m + ' ' + model,
-                      'color': 600 + int(int(m) / 100 + 0.5),  # kRed
-                      #'color':   col,
-                      'isSignal': 2,
-                      'isData': 0,
-                      'scale': 1    #
-        }
-        plot['qqH_hww_' + m + '_' + model_name] = {
-            'nameHR': 'qqH ' + m + ' ' + model,
-                      'color': 600 + 20 + int(int(m) / 100 + 0.5),  # kRed
-                      'isSignal': 2,
-                      'isData': 0,
-                      'scale': 1    #
-        }
-
-        plot['qqH_hww_SBI' + m + '_' + model_name] = {
-            'nameHR': 'qqH ' + m + ' ' + model,
-                      'color': 600 + int(int(m) / 100 + 0.5),  # kRed
-                      #'color':   col,
-                      'isSignal': 2,
-                      'isData': 0,
-                      'scale': 1    #
-        }
+# Plot all Sign
+#import os.path
+#
+#massesAndModelsFile = "massesAndModels.py"
+#
+# if os.path.exists(massesAndModelsFile) :
+#  handle = open(massesAndModelsFile,'r')
+#  exec(handle)
+#  handle.close()
+# else:
+#  print "!!! ERROR file ", massesAndModelsFile, " does not exist."
+#
+# for m in masses:
+#  for model in models:
+#    model_name = model.replace("cprime","c").replace(".","").replace("BRnew","brn")
+#
+#
+#    plot['ggH_hww_'+m+'_'+model_name] = {
+#                  'nameHR' : 'ggH '+m+' '+model,
+#           5), # kRed
+#                  #'color':   col,
+#                  'isSignal' : 2,
+#                  'isData'   : 0,
+#                  'scale'    : 1    #
+#                  }
+#    plot['ggH_hww_SBI'+m+'_'+model_name] = {
+#                  'nameHR' : 'ggH '+m+' '+model,
+#                  'color': 600+int(int(m)/100+0.5), # kRed
+#                  #'color':   col,
+#                  'isSignal' : 2,
+#                  'isData'   : 0,
+#                  'scale'    : 1    #
+#                  }
+#    plot['qqH_hww_'+m+'_'+model_name] = {
+#                  'nameHR' : 'qqH '+m+' '+model,
+#                  'color': 600+20+int(int(m)/100+0.5), # kRed
+#                  'isSignal' : 2,
+#                  'isData'   : 0,
+#                  'scale'    : 1    #
+#                  }
+#
 
 
 # data
@@ -502,7 +501,7 @@ plot['DATA'] = {
     'color': 1,
     'isSignal': 0,
     'isData': 1,
-    'isBlind': 0
+    'isBlind': 1
 }
 
 

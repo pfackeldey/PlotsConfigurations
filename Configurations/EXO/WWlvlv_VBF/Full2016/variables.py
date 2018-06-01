@@ -18,7 +18,7 @@ variables['events'] = {'name': '1',
                        'fold': 3,
                        'divideByBinWidth': 1,
                        }
-"""
+
 
 variables['mTi']  = {   'name': 'mTi',            #   variable name
                         'range' : ([100,150,200,250,300,350,400,450,500,550,600,650,700,750,800,900,1000,2000],),    #   variable range
@@ -28,6 +28,7 @@ variables['mTi']  = {   'name': 'mTi',            #   variable name
                         'divideByBinWidth': 0,
                         }
 
+"""
 variables['mTi_VBF']  = {   'name': 'mTi',            #   variable name
                         'range' : ([100,150,200,250,300,350,400,500,700,1000,2000],),    #   variable range
                         'xaxis' : 'm_{T,i} [GeV]',  #   x axis name
@@ -118,12 +119,12 @@ variables['ml_score_misc']  = {   'name': 'ml_score_misc',            #   variab
 #                        }
 
 
-variables['mll']  = {   'name': 'mll',            #   variable name
-                        'range' : (30,0,300),    #   variable range
-                        'xaxis' : 'm_{ll} [GeV]',  #   x axis name
-                        'fold' :3,
-                        'divideByBinWidth': 0,
-                        }
+variables['mll'] = {'name': 'mll',  # variable name
+                    'range': (30, 0, 300),  # variable range
+                    'xaxis': 'm_{ll} [GeV]',  # x axis name
+                    'fold': 3,
+                    'divideByBinWidth': 1,
+                    }
 
 variables['mll_DY']  = {   'name': 'mll',            #   variable name
                         'range' : (25,0,120),    #   variable range

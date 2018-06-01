@@ -4,21 +4,20 @@
 
 #cuts = {}
 
-#Update to new bTag working point -0.5884 from  -0.715
+# Update to new bTag working point -0.5884 from  -0.715
 supercut = 'std_vector_lepton_pt[0]>25 && std_vector_lepton_pt[1]>20 \
             && std_vector_lepton_pt[2]<10 \
             && (std_vector_lepton_flavour[0] * std_vector_lepton_flavour[1] == -11*13) \
            '
 
 # Inclusive category
-#cuts['hwwhm_13TeV_of_INCL']  ='1'
-
+cuts['hwwhm_13TeV_of_INCL'] = '1'
 
 
 #*************0-1-2-VBF-categories************************************
 
-##------------DY----------------------
-
+# ------------DY----------------------
+"""
 cuts['hww2l2v_13TeV_dytt_of0j']  = '( ml_score_DY>0.3) \
                 && (ml_score_WW < 0.4) \
                 && (ml_score_hww120_200 < 0.5) \
@@ -77,8 +76,8 @@ cuts['hww2l2v_13TeV_dytt_of2j']  = '( ml_score_DY>0.3) \
                 && ( std_vector_jet_pt[9] < 20 || std_vector_jet_cmvav2[9] < -0.5884 ) \
                 '
 
-"""
-cuts['hww2l2v_13TeV_dytt_of2j_vbf']  = '( mth<60) \
+
+cuts['hww2l2v_13TeV_dytt_of2j_vbf'] = '( mth<60) \
                 && mll>30 && mll<80 \
                 && ( std_vector_jet_pt[0] >= 30 ) \
                 && ( std_vector_jet_pt[1] >= 30 ) \
@@ -94,7 +93,7 @@ cuts['hww2l2v_13TeV_dytt_of2j_vbf']  = '( mth<60) \
                 && ( std_vector_jet_pt[8] < 20 || std_vector_jet_cmvav2[8] < -0.5884 ) \
                 && ( std_vector_jet_pt[9] < 20 || std_vector_jet_cmvav2[9] < -0.5884 ) \
                 '
-"""
+
 
 
 #------------TOP----------------------
@@ -148,16 +147,16 @@ cuts['hww2l2v_13TeV_top_of2j']  = '( ml_score_DY<0.3) \
 
 
 
-"""
-#NEW: VBF Top Ctrl region: only 2 jets and one b-jet with p T > 30 GeV. Plus detajj>3.5 && mjj>500
-#https://github.com/latinos/PlotsConfigurations/blob/master/Configurations/VBF/Moriond/cuts.py#L59
-cuts['hww2l2v_13TeV_top_VBF']  = ' mll>50 \
+
+# NEW: VBF Top Ctrl region: only 2 jets and one b-jet with p T > 30 GeV. Plus detajj>3.5 && mjj>500
+# https://github.com/latinos/PlotsConfigurations/blob/master/Configurations/VBF/Moriond/cuts.py#L59
+cuts['hww2l2v_13TeV_top_VBF'] = ' mll>50 \
                 && ( std_vector_jet_pt[0] >= 30 ) \
                 && ( std_vector_jet_pt[1] >= 30 ) \
                 && (detajj>3.5 && mjj>500) \
                 && ( std_vector_jet_cmvav2[0]>-0.5884 || std_vector_jet_cmvav2[1]>-0.5884 ) \
                 '
-"""
+
 
 
 
@@ -343,9 +342,9 @@ cuts['hwwhm_high_13TeV_of2j']  = '( ml_score_DY<0.3) \
                 && ( std_vector_jet_pt[9] < 20 || std_vector_jet_cmvav2[9] < -0.5884 ) \
                 '
 
-"""
-#VBF case, form 2015 analysis
-cuts['hwwhm_13TeV_of_VBF']  = '( mth>=60) \
+
+# VBF case, form 2015 analysis
+cuts['hwwhm_13TeV_of_VBF'] = '( mth>=60) \
                 && ( mTi > 100 ) \
                 && ( mjj>500 ) \
                 && ( detajj>3.5  ) \
@@ -361,7 +360,7 @@ cuts['hwwhm_13TeV_of_VBF']  = '( mth>=60) \
                 && ( std_vector_jet_pt[8] < 20 || std_vector_jet_cmvav2[8] < -0.5884 ) \
                 && ( std_vector_jet_pt[9] < 20 || std_vector_jet_cmvav2[9] < -0.5884 ) \
                 '
-"""
+
 
 
 
@@ -439,3 +438,4 @@ cuts['hww2l2v_13TeV_top_of2j_OLD']  = 'mll>50 \
                     ) \
                '
 '''
+"""

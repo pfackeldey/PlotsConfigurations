@@ -86,7 +86,7 @@ nuisances['lumi'] = {
     'type': 'lnN',
 }
 
-for m in massesWithModel:
+for m in masses:
     for model in models:
         model_name = model.replace("cprime", "c").replace(
             ".", "").replace("BRnew", "brn")
@@ -204,7 +204,7 @@ nuisances['btagbc'] = {
     }
 }
 
-for m in massesWithModel:
+for m in masses:
     for model in models:
         model_name = model.replace("cprime", "c").replace(
             ".", "").replace("BRnew", "brn")
@@ -243,7 +243,7 @@ nuisances['btagudsg'] = {
     }
 }
 
-for m in massesWithModel:
+for m in masses:
     for model in models:
         model_name = model.replace("cprime", "c").replace(
             ".", "").replace("BRnew", "brn")
@@ -295,7 +295,7 @@ nuisances['trigg'] = {
 }
 
 
-for m in massesWithModel:
+for m in masses:
     for model in models:
         model_name = model.replace("cprime", "c").replace(
             ".", "").replace("BRnew", "brn")
@@ -340,7 +340,7 @@ nuisances['eff_e'] = {
     },
 }
 
-for m in massesWithModel:
+for m in masses:
     for model in models:
         model_name = model.replace("cprime", "c").replace(
             ".", "").replace("BRnew", "brn")
@@ -384,7 +384,7 @@ nuisances['electronpt'] = {
 }
 
 
-for m in massesWithModel:
+for m in masses:
     for model in models:
         model_name = model.replace("cprime", "c").replace(
             ".", "").replace("BRnew", "brn")
@@ -429,7 +429,7 @@ nuisances['elePtCor'] = {
     }
 }
 
-for m in massesWithModel:
+for m in masses:
     for model in models:
         model_name = model.replace("cprime", "c").replace(
             ".", "").replace("BRnew", "brn")
@@ -473,7 +473,7 @@ nuisances['eleEtaCor'] = {
 }
 
 
-for m in massesWithModel:
+for m in masses:
     for model in models:
         model_name = model.replace("cprime", "c").replace(
             ".", "").replace("BRnew", "brn")
@@ -486,7 +486,7 @@ for m in massesWithModel:
         nuisances['eleEtaCor']['samples'].update(
             {'qqH_hww_SBI' + m + '_' + model_name:  eleEtaCor_Syst})
 
-############ Muon Efficiency and energy scale  #######
+############# Muon Efficiency and energy scale  #######
 
 id_syst_mu = ['LepSF' + Nlep + 'l__mu_' + muWP +
               '__Up', 'LepSF' + Nlep + 'l__mu_' + muWP + '__Do']
@@ -518,7 +518,7 @@ nuisances['eff_m'] = {
     },
 }
 
-for m in massesWithModel:
+for m in masses:
     for model in models:
         model_name = model.replace("cprime", "c").replace(
             ".", "").replace("BRnew", "brn")
@@ -563,7 +563,7 @@ nuisances['muonpt'] = {
 }
 
 
-for m in massesWithModel:
+for m in masses:
     for model in models:
         model_name = model.replace("cprime", "c").replace(
             ".", "").replace("BRnew", "brn")
@@ -608,7 +608,7 @@ nuisances['jes'] = {
 }
 
 
-for m in massesWithModel:
+for m in masses:
     for model in models:
         model_name = model.replace("cprime", "c").replace(
             ".", "").replace("BRnew", "brn")
@@ -654,7 +654,7 @@ nuisances['met'] = {
 }
 
 
-for m in massesWithModel:
+for m in masses:
     for model in models:
         model_name = model.replace("cprime", "c").replace(
             ".", "").replace("BRnew", "brn")
@@ -788,7 +788,7 @@ nuisances['QCDscale_gg_ACCEPT'] = {
 }
 
 
-for m in massesWithModel:
+for m in masses:
     massA = int(m)
     weightA1 = 1.04802 + (massA * 3.62976e-05) + (massA * massA * -
                                                   2.61565e-08) + (massA * massA * massA * 4.20694e-12)
@@ -817,7 +817,7 @@ nuisances['QCDscale_qqbar_ACCEPT'] = {
                    'VZ': '1.029',
     },
 }
-for m in massesWithModel:
+for m in masses:
 
     mass = int(m)
     weight1 = ((0.971893 + (mass * 8.75961e-05) + (mass * mass * -3.9762e-08) +
@@ -925,7 +925,7 @@ def findClosestMass(m):
     return STUnc[thekey]
 
 
-for m in massesWithModel:
+for m in masses:
     unc = findClosestMass(m)
     for model in models:
         model_name = model.replace("cprime", "c").replace(
@@ -1000,7 +1000,7 @@ nuisances['pdf_Higgs_gg'] = {
     },
     'type': 'lnN',
 }
-for m in massesWithModel:
+for m in masses:
     for model in models:
         model_name = model.replace("cprime", "c").replace(
             ".", "").replace("BRnew", "brn")
@@ -1020,7 +1020,7 @@ nuisances['pdf_Higgs_qqbar'] = {
         'VZ': '1.04',
     },
 }
-for m in massesWithModel:
+for m in masses:
     for model in models:
         model_name = model.replace("cprime", "c").replace(
             ".", "").replace("BRnew", "brn")
@@ -1041,7 +1041,7 @@ nuisances['pdf_Higgs_gg_ACCEPT'] = {
     },
     'type': 'lnN',
 }
-for m in massesWithModel:
+for m in masses:
     for model in models:
         model_name = model.replace("cprime", "c").replace(
             ".", "").replace("BRnew", "brn")
@@ -1071,7 +1071,7 @@ nuisances['pdf_Higgs_qqbar_ACCEPT'] = {
 }
 
 
-for m in massesWithModel:
+for m in masses:
     for model in models:
         model_name = model.replace("cprime", "c").replace(
             ".", "").replace("BRnew", "brn")
