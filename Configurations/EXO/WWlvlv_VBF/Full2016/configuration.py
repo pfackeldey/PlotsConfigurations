@@ -6,14 +6,14 @@ tag = 'HWWhighMass2016_OF'
 
 
 # used by mkShape to define output directory for root files
-outputDir = '/net/scratch_cms3b/fackeldey/shapes/Full2016_shapes_peter/rootFile_OF/plots_HWWhighMass2016_OF_with_mTi.root'
+outputDir = '/net/scratch_cms3b/fackeldey/shapes/Full2016_shapes_peter/rootFile_OF/plots_HWWhighMass2016_OF_new_binning'
 
 
 # file with list of variables
 variablesFile = 'variables.py'
 
 # file with list of cuts
-cutsFile = 'cuts_dnn.py'  # 'cuts_dnn.py'
+cutsFile = 'cuts_dnn_indep.py'  # 'cuts_dnn.py'
 
 # file with list of samples
 samplesFile = 'samples_dnn.py'
@@ -32,11 +32,11 @@ lumi = 35.9
 
 # used by mkPlot to define output directory for plots
 # different from "outputDir" to do things more tidy
-outputDirPlots = '/net/scratch_cms3b/fackeldey/shapes/Full2016_shapes_peter/plotHWWhighMass_OF'
+outputDirPlots = '/net/scratch_cms3b/fackeldey/shapes/Full2016_shapes_peter/plotHWWhighMass_OF_new_binning'
 
 
 # used by mkDatacards to define output directory for datacards
-outputDirDatacard = '/net/scratch_cms3b/fackeldey/shapes/Full2016_shapes_peter/datacards_test_OF'
+outputDirDatacard = '/net/scratch_cms3b/fackeldey/shapes/Full2016_shapes_peter/datacards_test_OF_new_binning'
 
 
 # structure file for datacard

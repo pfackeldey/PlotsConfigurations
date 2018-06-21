@@ -3,3 +3,4 @@ sub*.py
 *.so
 *.pcm
 *.py~
+log/

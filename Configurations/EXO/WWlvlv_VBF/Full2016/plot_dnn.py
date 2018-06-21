@@ -77,10 +77,17 @@ groupPlot['150'] = {
 
 
 groupPlot['300'] = {
-    'nameHR': 'mH = 300 GeV',
+    'nameHR': 'mH = 300 GeV X 5',
     'isSignal': 2,
     'color': 603,  # kRed
-    'samples': ['ggH_hww_300_c10brn00', 'ggH_hwwSBI_300_c10brn00', 'qqH_hww_300_c10brn00']
+    'samples': ['ggH_hww_300_c10brn00', 'ggH_hww_SBI300_c10brn00', 'qqH_hww_300_c10brn00']
+}
+
+groupPlot['800'] = {
+    'nameHR': 'mH = 800 GeV X 10',
+    'isSignal': 2,
+    'color': 3,  # kRed
+    'samples': ['ggH_hww_800_c10brn00', 'ggH_hww_SBI800_c10brn00', 'qqH_hww_800_c10brn00']
 }
 
 
@@ -357,7 +364,7 @@ plot['ggH_hww'] = {
 
 
 # Signal
-
+########################## 150 GEV ############################
 
 plot['ggH_hww_150_c10brn00'] = {
     'nameHR': 'ggH 150',
@@ -367,10 +374,18 @@ plot['ggH_hww_150_c10brn00'] = {
     'isData': 0,
     'scale': 1,    #
     'cuts': {
-                   'hwwhm_13TeV_of_0j': 1,
-                   'hwwhm_13TeV_of_1j': 1,
-                   'hwwhm_13TeV_of2j': 1,
-                   'hwwhm_13TeV_of_VBF': 1,
+                   'hwwhm_13TeV_of0j_low': 1,
+                   'hwwhm_13TeV_of1j_low': 1,
+                   'hwwhm_13TeV_of2j_low': 1,
+                   'hwwhm_13TeV_ofVBF_low': 1,
+                   'hwwhm_13TeV_of0j_med': 1,
+                   'hwwhm_13TeV_of1j_med': 1,
+                   'hwwhm_13TeV_of2j_med': 1,
+                   'hwwhm_13TeV_ofVBF_med': 1,
+                   'hwwhm_13TeV_of0j_high': 1,
+                   'hwwhm_13TeV_of1j_high': 1,
+                   'hwwhm_13TeV_of2j_high': 1,
+                   'hwwhm_13TeV_ofVBF_high': 1,
     }
 }
 plot['ggH_hww_SBI150_c10brn00'] = {
@@ -381,10 +396,18 @@ plot['ggH_hww_SBI150_c10brn00'] = {
               'isData': 0,
               'scale': 1,    #
     'cuts': {
-        'hwwhm_13TeV_of_0j': 1,
-        'hwwhm_13TeV_of_1j': 1,
-        'hwwhm_13TeV_of2j': 1,
-        'hwwhm_13TeV_of_VBF': 1,
+        'hwwhm_13TeV_of0j_low': 1,
+        'hwwhm_13TeV_of1j_low': 1,
+        'hwwhm_13TeV_of2j_low': 1,
+        'hwwhm_13TeV_ofVBF_low': 1,
+        'hwwhm_13TeV_of0j_med': 1,
+        'hwwhm_13TeV_of1j_med': 1,
+        'hwwhm_13TeV_of2j_med': 1,
+        'hwwhm_13TeV_ofVBF_med': 1,
+        'hwwhm_13TeV_of0j_high': 1,
+        'hwwhm_13TeV_of1j_high': 1,
+        'hwwhm_13TeV_of2j_high': 1,
+        'hwwhm_13TeV_ofVBF_high': 1,
     }
 }
 plot['qqH_hww_150_c10brn00'] = {
@@ -394,26 +417,42 @@ plot['qqH_hww_150_c10brn00'] = {
               'isData': 0,
               'scale': 1,    #
     'cuts': {
-        'hwwhm_13TeV_of_0j': 1,
-        'hwwhm_13TeV_of_1j': 1,
-        'hwwhm_13TeV_of2j': 1,
-        'hwwhm_13TeV_of_VBF': 1,
+        'hwwhm_13TeV_of0j_low': 1,
+        'hwwhm_13TeV_of1j_low': 1,
+        'hwwhm_13TeV_of2j_low': 1,
+        'hwwhm_13TeV_ofVBF_low': 1,
+        'hwwhm_13TeV_of0j_med': 1,
+        'hwwhm_13TeV_of1j_med': 1,
+        'hwwhm_13TeV_of2j_med': 1,
+        'hwwhm_13TeV_ofVBF_med': 1,
+        'hwwhm_13TeV_of0j_high': 1,
+        'hwwhm_13TeV_of1j_high': 1,
+        'hwwhm_13TeV_of2j_high': 1,
+        'hwwhm_13TeV_ofVBF_high': 1,
     }
 }
 
-
+########################## 300 GEV ############################
 plot['ggH_hww_300_c10brn00'] = {
     'nameHR': 'ggH 300',
     'color': 600,  # kRed
     #'color':   col,
     'isSignal': 2,
     'isData': 0,
-    'scale': 1,    #
+    'scale': 5,    #
     'cuts': {
-                   'hwwhm_13TeV_of_0j': 1,
-                   'hwwhm_13TeV_of_1j': 1,
-                   'hwwhm_13TeV_of2j': 1,
-                   'hwwhm_13TeV_of_VBF': 1,
+                   'hwwhm_13TeV_of0j_low': 1,
+                   'hwwhm_13TeV_of1j_low': 1,
+                   'hwwhm_13TeV_of2j_low': 1,
+                   'hwwhm_13TeV_ofVBF_low': 1,
+                   'hwwhm_13TeV_of0j_med': 1,
+                   'hwwhm_13TeV_of1j_med': 1,
+                   'hwwhm_13TeV_of2j_med': 1,
+                   'hwwhm_13TeV_ofVBF_med': 1,
+                   'hwwhm_13TeV_of0j_high': 1,
+                   'hwwhm_13TeV_of1j_high': 1,
+                   'hwwhm_13TeV_of2j_high': 1,
+                   'hwwhm_13TeV_ofVBF_high': 1,
     }
 }
 plot['ggH_hww_SBI300_c10brn00'] = {
@@ -422,12 +461,20 @@ plot['ggH_hww_SBI300_c10brn00'] = {
               #'color':   col,
               'isSignal': 2,
               'isData': 0,
-              'scale': 1,    #
+              'scale': 5,    #
     'cuts': {
-        'hwwhm_13TeV_of_0j': 1,
-        'hwwhm_13TeV_of_1j': 1,
-        'hwwhm_13TeV_of2j': 1,
-        'hwwhm_13TeV_of_VBF': 1,
+        'hwwhm_13TeV_of0j_low': 1,
+        'hwwhm_13TeV_of1j_low': 1,
+        'hwwhm_13TeV_of2j_low': 1,
+        'hwwhm_13TeV_ofVBF_low': 1,
+        'hwwhm_13TeV_of0j_med': 1,
+        'hwwhm_13TeV_of1j_med': 1,
+        'hwwhm_13TeV_of2j_med': 1,
+        'hwwhm_13TeV_ofVBF_med': 1,
+        'hwwhm_13TeV_of0j_high': 1,
+        'hwwhm_13TeV_of1j_high': 1,
+        'hwwhm_13TeV_of2j_high': 1,
+        'hwwhm_13TeV_ofVBF_high': 1,
     }
 }
 plot['qqH_hww_300_c10brn00'] = {
@@ -435,14 +482,90 @@ plot['qqH_hww_300_c10brn00'] = {
     'color': 600,  # kRed
               'isSignal': 2,
               'isData': 0,
-              'scale': 1,    #
+              'scale': 5,    #
     'cuts': {
-        'hwwhm_13TeV_of_0j': 1,
-        'hwwhm_13TeV_of_1j': 1,
-        'hwwhm_13TeV_of2j': 1,
-        'hwwhm_13TeV_of_VBF': 1,
+        'hwwhm_13TeV_of0j_low': 1,
+        'hwwhm_13TeV_of1j_low': 1,
+        'hwwhm_13TeV_of2j_low': 1,
+        'hwwhm_13TeV_ofVBF_low': 1,
+        'hwwhm_13TeV_of0j_med': 1,
+        'hwwhm_13TeV_of1j_med': 1,
+        'hwwhm_13TeV_of2j_med': 1,
+        'hwwhm_13TeV_ofVBF_med': 1,
+        'hwwhm_13TeV_of0j_high': 1,
+        'hwwhm_13TeV_of1j_high': 1,
+        'hwwhm_13TeV_of2j_high': 1,
+        'hwwhm_13TeV_ofVBF_high': 1,
     }
 }
+
+########################## 800 GEV ############################
+plot['ggH_hww_800_c10brn00'] = {
+    'nameHR': 'ggH 800',
+    'color': 600,  # kRed
+    #'color':   col,
+    'isSignal': 2,
+    'isData': 0,
+    'scale': 10,    #
+    'cuts': {
+                   'hwwhm_13TeV_of0j_low': 1,
+                   'hwwhm_13TeV_of1j_low': 1,
+                   'hwwhm_13TeV_of2j_low': 1,
+                   'hwwhm_13TeV_ofVBF_low': 1,
+                   'hwwhm_13TeV_of0j_med': 1,
+                   'hwwhm_13TeV_of1j_med': 1,
+                   'hwwhm_13TeV_of2j_med': 1,
+                   'hwwhm_13TeV_ofVBF_med': 1,
+                   'hwwhm_13TeV_of0j_high': 1,
+                   'hwwhm_13TeV_of1j_high': 1,
+                   'hwwhm_13TeV_of2j_high': 1,
+                   'hwwhm_13TeV_ofVBF_high': 1,
+    }
+}
+plot['ggH_hww_SBI800_c10brn00'] = {
+    'nameHR': 'ggH 800',
+    'color': 600,  # kRed
+              #'color':   col,
+              'isSignal': 2,
+              'isData': 0,
+              'scale': 10,    #
+    'cuts': {
+        'hwwhm_13TeV_of0j_low': 1,
+        'hwwhm_13TeV_of1j_low': 1,
+        'hwwhm_13TeV_of2j_low': 1,
+        'hwwhm_13TeV_ofVBF_low': 1,
+        'hwwhm_13TeV_of0j_med': 1,
+        'hwwhm_13TeV_of1j_med': 1,
+        'hwwhm_13TeV_of2j_med': 1,
+        'hwwhm_13TeV_ofVBF_med': 1,
+        'hwwhm_13TeV_of0j_high': 1,
+        'hwwhm_13TeV_of1j_high': 1,
+        'hwwhm_13TeV_of2j_high': 1,
+        'hwwhm_13TeV_ofVBF_high': 1,
+    }
+}
+plot['qqH_hww_800_c10brn00'] = {
+    'nameHR': 'qqH 800',
+    'color': 600,  # kRed
+              'isSignal': 2,
+              'isData': 0,
+              'scale': 10,    #
+    'cuts': {
+        'hwwhm_13TeV_of0j_low': 1,
+        'hwwhm_13TeV_of1j_low': 1,
+        'hwwhm_13TeV_of2j_low': 1,
+        'hwwhm_13TeV_ofVBF_low': 1,
+        'hwwhm_13TeV_of0j_med': 1,
+        'hwwhm_13TeV_of1j_med': 1,
+        'hwwhm_13TeV_of2j_med': 1,
+        'hwwhm_13TeV_ofVBF_med': 1,
+        'hwwhm_13TeV_of0j_high': 1,
+        'hwwhm_13TeV_of1j_high': 1,
+        'hwwhm_13TeV_of2j_high': 1,
+        'hwwhm_13TeV_ofVBF_high': 1,
+    }
+}
+
 
 import os.path
 
@@ -502,7 +625,7 @@ plot['DATA'] = {
     'color': 1,
     'isSignal': 0,
     'isData': 1,
-    'isBlind': 0
+    'isBlind': 1
 }
 
 

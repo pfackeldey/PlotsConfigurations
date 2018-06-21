@@ -120,7 +120,7 @@ cuts['hww2l2v_13TeV_top_ofVBF'] = ' ml_max_index==8 \
 
 # ------------SIGNAL REGION----------------------
 
-cuts['hwwhm_13TeV_of0j'] = '(ml_max_index==0 || ml_max_index==1 || ml_max_index==2) \
+cuts['hwwhm_13TeV_of0j'] = '(ml_max_index==0 || ml_max_index==1) \
                 && ( std_vector_jet_pt[0] < 30 ) \
                 && ( std_vector_jet_pt[0] < 20 || std_vector_jet_cmvav2[0] < -0.5884 ) \
                 && ( std_vector_jet_pt[1] < 20 || std_vector_jet_cmvav2[1] < -0.5884 ) \
@@ -134,7 +134,7 @@ cuts['hwwhm_13TeV_of0j'] = '(ml_max_index==0 || ml_max_index==1 || ml_max_index=
                 && ( std_vector_jet_pt[9] < 20 || std_vector_jet_cmvav2[9] < -0.5884 ) \
                 '
 
-cuts['hwwhm_13TeV_of1j'] = '(ml_max_index==0 || ml_max_index==1 || ml_max_index==2) \
+cuts['hwwhm_13TeV_of1j'] = '(ml_max_index==0 || ml_max_index==1) \
                 && ( std_vector_jet_pt[0] >= 30 ) \
                 && ( std_vector_jet_pt[1] < 30 ) \
                 && ( std_vector_jet_pt[0] < 20 || std_vector_jet_cmvav2[0] < -0.5884 ) \
@@ -151,7 +151,7 @@ cuts['hwwhm_13TeV_of1j'] = '(ml_max_index==0 || ml_max_index==1 || ml_max_index=
 
 # New: 2jet
 # https://github.com/latinos/PlotsConfigurations/blob/master/Configurations/ggH2j/Moriond/cuts.py#L48
-cuts['hwwhm_13TeV_of2j'] = ' (ml_max_index==0 || ml_max_index==1 || ml_max_index==2) \
+cuts['hwwhm_13TeV_of2j'] = ' (ml_max_index==0 || ml_max_index==1) \
                 && ( std_vector_jet_pt[0] >= 30 && std_vector_jet_pt[1] >= 30 ) \
                 && ( std_vector_jet_pt[0] < 20 || std_vector_jet_cmvav2[0] < -0.5884 ) \
                 && ( std_vector_jet_pt[1] < 20 || std_vector_jet_cmvav2[1] < -0.5884 ) \
@@ -167,7 +167,7 @@ cuts['hwwhm_13TeV_of2j'] = ' (ml_max_index==0 || ml_max_index==1 || ml_max_index
 
 
 # VBF case, form 2015 analysis
-cuts['hwwhm_13TeV_ofVBF'] = '(ml_max_index==3 || ml_max_index==4 || ml_max_index==5) \
+cuts['hwwhm_13TeV_ofVBF'] = '(ml_max_index==3 || ml_max_index==4) \
                 && ( std_vector_jet_pt[1] >= 30 ) \
                 && ( std_vector_jet_pt[0] < 20 || std_vector_jet_cmvav2[0] < -0.5884 ) \
                 && ( std_vector_jet_pt[1] < 20 || std_vector_jet_cmvav2[1] < -0.5884 ) \
